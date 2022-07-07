@@ -10,20 +10,29 @@ const confirmButton = document.getElementById('confirmSelect');
 const formArray = [selectById,selectByTitle,selectByEmotion];
 
 //----WebSocketPart----
-const ws = new WebSocket("ws://localhost:8000");
+const ws = new WebSocket("ws://localhost:7075");
 ws.addEventListener("open", ()=>{
     console.log("connected");
-    connectionReady = true;
+    loadScenes();
 })
 ws.addEventListener("message",(data)=>{
-    
+    allScenes = JSON.parse(data.data)["Scenes"];
+    loadStartingOption();
 })
 
+function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+      currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+}
+
+
 function loadScenes(){
-    while(!connectionReady){};
-    ws.send("1=")
-    loadStartingOption();
+    ws.send("1=");
 } 
+
 function loadStartingOption(){
     allScenes.forEach(element => {
         movieTitleSet.add(element["movie title"]);

@@ -17,8 +17,7 @@ wss.on('connection', (ws)=>{
         let messageCode = splits[0];
         switch(messageCode){
             case "1":
-                const allScenesJSONstr = JSON.stringify(allScenesJSON);
-                ws.send(allScenesJSONstr);
+                ws.send(JSON.stringify(allScenesJSON));
                 console.log("mandato");
                 break;
             case "2":
