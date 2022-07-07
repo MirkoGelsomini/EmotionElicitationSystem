@@ -12,6 +12,36 @@ var boolMuted = false;
 
 const currentTimeElement = document.querySelector('.current');
 const durationTimeElement = document.querySelector('.duration');
+var playlist = [];
+messageCodeExpected = 0;
+//----WebSocketPart----
+const ws = new WebSocket("ws://localhost:7075");
+ws.addEventListener("open", ()=>{
+    console.log("connected");
+    messageCodeExpected = 2;
+    ws.send("2)")
+})
+
+ws.addEventListener("message",(data)=>{
+    switch(messageCodeExpected){
+        case 2:
+            var playlistObj = JSON.parse(data.data);
+            console.log(playlistObj);
+            Array.from(playlistObj).forEach(element => {
+                playlist.push(element.URL);
+            });
+            startAnalyzing();
+            break;
+        case 4:
+            console.log(data.data);
+            changeWindowToPlayer();
+            break;
+        default:
+            console.log("Not valid message code");
+    }   
+        
+    
+})
 
 //Play Pause
 
@@ -39,7 +69,7 @@ myVideo.addEventListener('pause', ()=>{
 myVideo.addEventListener('click',()=>togglePlayPause());
 
 myVideo.addEventListener('ended',()=>{
-    alert("Finished");
+    nextTrack();
 })
 //Progress Bar
 
@@ -114,3 +144,16 @@ const currentTime= ()=>{
 
 myVideo.addEventListener('timeupdate', currentTime);
 
+
+function startAnalyzing(){
+    nextTrack();
+}
+
+function nextTrack(){
+    let link = playlist.shift();
+    if(link){
+        myVideo.src = link;
+    }else{
+        alert("Playlist terminata");
+    }
+}

@@ -2,7 +2,8 @@ var allScenes = [];
 var chosenScenes = [];
 var movieTitleSet = new Set();
 var emotionSet = new Set();
-var connectionReady = false; 
+var messageCodeExpected = 0; //follows the socket message code documention 
+
 const selectById = document.getElementById('select-by-id');
 const selectByTitle = document.getElementById('select-by-title');
 const selectByEmotion = document.getElementById('select-by-emotion');
@@ -15,22 +16,28 @@ ws.addEventListener("open", ()=>{
     console.log("connected");
     loadScenes();
 })
-ws.addEventListener("message",(data)=>{
-    allScenes = JSON.parse(data.data)["Scenes"];
-    loadStartingOption();
-})
 
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-      currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-}
+ws.addEventListener("message",(data)=>{
+    switch(messageCodeExpected){
+        case 1:
+            allScenes = JSON.parse(data.data)["Scenes"];
+            loadStartingOption();
+            break;
+        case 3:
+            console.log(data.data);
+            changeWindowToPlayer();
+            break;
+        default:
+            console.log("Not valid message code");
+    }   
+        
+    
+})
 
 
 function loadScenes(){
-    ws.send("1=");
+    messageCodeExpected = 1;
+    ws.send("1)");
 } 
 
 function loadStartingOption(){
@@ -160,8 +167,18 @@ function countScenesAvailable(){
     }else{
         document.getElementById('counter-scenes').innerHTML = "Scene trovate: "+chosenScenes.length;
     }
+    console.log(chosenScenes);
 }
 
+function saveChosenScenes(){
+    messageCodeExpected = 3;
+    console.log("3)"+JSON.stringify(chosenScenes));
+    ws.send("3)"+JSON.stringify(chosenScenes));
+}
+
+function changeWindowToPlayer(){
+    window.location.href="index.html";
+}
 
 selectById.onchange = ()=>{countScenesAvailable();changeTitlesOption();changeEmotionsOption();removeAllDuplicatesFromSelects(formArray)};
 
@@ -171,7 +188,7 @@ selectByEmotion.onchange = ()=>{countScenesAvailable();changeIdsOption();changeT
 
 confirmButton.onclick = ()=>{
     if(chosenScenes.length > 0){
-        window.location.href="../../../html/ltr/horizontal-menu-template-dark/index.html";
+        saveChosenScenes();
     }else{
         alert("Nessuna scena selezionata");
     }
