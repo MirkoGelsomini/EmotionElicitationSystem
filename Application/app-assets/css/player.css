@@ -1,0 +1,121 @@
+.container{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.c-video{
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.video{
+    width:100%;
+}
+
+
+.c-video:hover .controls{
+    transform: translateY(0);
+    transition: all 0.2s;
+}
+
+.controls{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10,0.7);
+    transform: translateY(100%) translateY(0px);
+    transition: all 0.2s;
+}
+
+.buttons button{
+    background: none;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+
+.buttons #play-pause:before{
+    content: '\f144';
+    font-family: 'Font Awesome 5 Free';
+    width: auto;
+    height: auto;
+    font-size: 3vw;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.buttons #play-pause.play:before{
+    content: '\f144';
+}
+
+.buttons #play-pause.pause:before{
+    content: '\f28b';
+}
+
+.buttons #mute-unmute:before{
+    content: '\f028';
+    font-family: 'Font Awesome 5 Free';
+    width: auto;
+    height: auto;
+    font-size: 3vw;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.buttons #mute-unmute.unmuted:before{
+    content: '\f028';
+}
+
+.buttons #mute-unmute.muted:before{
+    content: '\f6a9';
+}
+
+.buttons button:hover{
+    background-color: rgba(18, 189, 223, 0.5);
+}
+
+.bar{
+    grid-area: "bar";
+    position: relative;
+    height: 5px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: 0.3s;
+    background-color: rgba(111, 0, 255, 0.334);
+    cursor: pointer;
+}
+
+.bar-content{
+    height: 10px;
+    width: 0px;
+    background-color: rgb(104, 74, 236);
+}
+
+.volume{
+    appearance: none;
+    background: rgba(190, 94, 94, 0.6);
+    border-radius: 5px;
+    width: 100%;
+    margin: 2px;  
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+}
+
+.time{
+    font-size: 15px;
+    grid-area: "time";
+    color: white;
+    width: 20%;
+    height: 20px;
+    font-family: 'Font Awesome 5 Free';
+    align-items: center;
+}
+

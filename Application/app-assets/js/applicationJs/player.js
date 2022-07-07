@@ -1,0 +1,116 @@
+const myVideo = document.getElementById('video_1');
+
+const bar = document.querySelector('.bar')
+const barContent = document.querySelector('.bar-content');
+
+const playBtn = document.getElementById('play-pause');
+
+const volumeBtn = document.getElementById('mute-unmute');
+const volume = document.querySelector('.volume');
+var volumeBeforeChange = volume.value;
+var boolMuted = false;
+
+const currentTimeElement = document.querySelector('.current');
+const durationTimeElement = document.querySelector('.duration');
+
+//Play Pause
+
+function togglePlayPause(){
+    if(myVideo.paused){
+        myVideo.play();
+    }else{
+        myVideo.pause();
+    }
+}
+
+
+playBtn.onclick = function(){       
+    togglePlayPause();
+};
+
+myVideo.addEventListener('play', ()=>{
+    playBtn.className = "pause";
+})
+
+myVideo.addEventListener('pause', ()=>{
+    playBtn.className = "play";
+})
+
+myVideo.addEventListener('click',()=>togglePlayPause());
+
+myVideo.addEventListener('ended',()=>{
+    alert("Finished");
+})
+//Progress Bar
+
+myVideo.addEventListener('timeupdate',function(){
+    var barConPos = myVideo.currentTime / myVideo.duration;
+    barContent.style.width = barConPos * 100 + "%";
+    if(VideoColorSpace.ended){
+        playBtn.className = "play";
+    }
+})
+
+
+//Change progress bar on  click
+
+bar.addEventListener('click',(e)=>{
+    const progressTime = (e.offsetX / bar.offsetWidth)*myVideo.duration;
+    myVideo.currentTime = progressTime;
+})
+
+//Volume Control
+
+volume.addEventListener('mousemove',(e)=>{
+    myVideo.volume = e.target.value;
+    if(e.target.value == 0){
+        boolMuted = true;
+        volumeBeforeChange = 0.5;
+        volumeBtn.className = "muted";
+    }else{
+        boolMuted = false;
+        volumeBtn.className = "unmuted"
+    }
+})
+
+function toggleMuteUnmute(){
+    if(!boolMuted){
+        myVideo.volume = 0;
+        volumeBeforeChange = volume.value;
+        volume.value = 0;
+        volumeBtn.className = "muted";
+    }else{
+        volumeBtn.className = "unmuted";
+        myVideo.volume = volumeBeforeChange;
+        volume.value = volumeBeforeChange;
+    }
+    boolMuted = !boolMuted
+}
+volumeBtn.onclick = function(){
+    toggleMuteUnmute();
+};
+//Time progress
+
+function timeConverter(time){
+    var hour = addZero(parseInt(time / 3600));
+    var minutes = addZero(parseInt((time % 3600)/60));
+    var second = addZero(parseInt((time % 3600)%60));
+    return hour+":"+minutes+":"+second;
+}
+
+function addZero(timeToAdd){
+    var str = String(timeToAdd).length;
+    if(str === 1){   
+        return "0"+timeToAdd;
+    }else{
+        return timeToAdd;
+    }
+}
+
+const currentTime= ()=>{
+   currentTimeElement.innerHTML = timeConverter(myVideo.currentTime);
+   durationTimeElement.innerHTML = timeConverter(myVideo.duration);
+}
+
+myVideo.addEventListener('timeupdate', currentTime);
+
