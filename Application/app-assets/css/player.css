@@ -151,3 +151,9 @@
 .buttons #full-screen.reduce:before{
     content: '\f066';
 }
+
+.validation-shown{
+    align-items: center;
+    font-size: 1.5vw;
+    color: red;
+}

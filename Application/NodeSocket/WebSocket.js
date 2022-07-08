@@ -1,10 +1,16 @@
 const WebSocket = require('ws');
 const fs = require('fs');
+const path = require('path')
 const wss = new WebSocket.Server({port: 7075});
 let allScenesJSON = JSON.parse(fs.readFileSync(require('path').resolve(__dirname, '.')+"/movieData.json"));
 let chosedScenesJSON = JSON.parse(fs.readFileSync(require('path').resolve(__dirname, '.')+"/chosedScenes.json"));
+let everReadNumber = false;
+let numberAnalysis = 0;
 wss.on('connection', (ws)=>{
     console.log("new client connected")
+    if(!everReadNumber){
+        countNumberOfAnalysis();
+    }
     /**
      * [messageCode])(opt)[JSON]
      * messageCode:
@@ -24,19 +30,51 @@ wss.on('connection', (ws)=>{
                 ws.send(JSON.stringify(chosedScenesJSON));
                 break;
             case "3":
-                fs.writeFileSync(require('path').resolve(__dirname, '.')+"/chosedScenes.json",splits[1]);
-                chosedScenesJSON = JSON.parse(fs.readFileSync(require('path').resolve(__dirname, '.')+"/chosedScenes.json"));
-                ws.send("Scene salvate")
+                var jsValue = JSON.parse(splits[1]);
+                fs.writeFile(path.resolve(__dirname, '.')+"/chosedScenes.json",JSON.stringify(jsValue,null,'\t'), (err) => {
+                    if (err)
+                      console.log(err);
+                    else {
+                      chosedScenesJSON = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.')+"/chosedScenes.json","utf-8"));
+                      console.log(chosedScenesJSON);
+                      ws.send("File written successfully\n");
+                    }
+                });
                 break;
             case "4":
+                var jsValue = JSON.parse(splits[1]);
+                
+                console.log(numberAnalysis);
+                fs.open(path.resolve(__dirname, './statistics')+"/"+numberAnalysis+"Analises.json", 'w', function (err, file) {
+                    if (err) throw err;
+                    console.log('Saved!');
+                  }); 
+                fs.writeFile(path.resolve(__dirname, './statistics')+"/"+numberAnalysis+"Analises.json",JSON.stringify(jsValue,null,'\t'),function (err) {
+                    if (err) throw err;
+                    console.log('Saved!');
+                });
+                numberAnalysis++;
+                ws.send("Perfect");
                 break;
             default:
                 ws.send("Message code not correct")
         }
-   });
+    });
 
     ws.on("close", () => {
         console.log("client disconnect")
     })
+    
+    function countNumberOfAnalysis(){
+        fs.readdir(path.resolve(__dirname, './statistics'), function (err, files) {
+            if (err) {
+                return console.log('Unable to scan directory: ' + err);
+            } 
+            numberAnalysis = files.length;
+        });
+        everReadNumber = true;
+    }
 });
+
+
 

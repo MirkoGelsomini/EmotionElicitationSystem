@@ -19,41 +19,6 @@ const fullScreenBtn = document.getElementById('full-screen');
 var timeout;
 var isFullScreen = false;
 
-var playlist = [];
-var currentScene;
-var messageCodeExpected = 0;
-
-
-const emotions = ["Amusement","Anger","Sadness","Tenderness","Fear","Disgust"];
-const videoPlaystDiv = document.getElementById("playlist");
-
-//----WebSocketPart----
-const ws = new WebSocket("ws://localhost:7075");
-ws.addEventListener("open", ()=>{
-    console.log("connected");
-    messageCodeExpected = 2;
-    ws.send("2)")
-})
-
-ws.addEventListener("message",(data)=>{
-    switch(messageCodeExpected){
-        case 2:
-            var playlistObj = JSON.parse(data.data);
-            console.log(playlistObj);
-            Array.from(playlistObj).forEach(element => {
-                playlist.push(element);
-            });
-            startAnalyzing();
-            break;
-        case 4:
-            console.log(data.data);
-            changeWindowToPlayer();
-            break;
-        default:
-            console.log("Not valid message code");
-    }     
-})
-
 //Play Pause
 
 function togglePlayPause(){
@@ -193,33 +158,6 @@ const currentTime= ()=>{
 }
 
 myVideo.addEventListener('timeupdate', currentTime);
-
-
-function startAnalyzing(){
-    nextTrack();
-}
-
-function askQuestion(){
-    var myModal = new bootstrap.Modal(document.getElementById("Questions"), {});    
-    myModal.show();  
-}
-
-
-function nextTrack(){
-    currentScene = playlist.shift();
-    if(currentScene.URL){
-        console.log(playlist);
-        myVideo.src = currentScene.URL;
-        let text = []
-        playlist.forEach((e)=>{text.push(e.id+" "+e["movie title"]+" "+e.emotions+"<br>")});
-        videoPlaystDiv.innerHTML = text.join("");
-        if(playlist.length == 0){
-            videoPlaystDiv.innerHTML = "Nulla in coda";
-        }
-    }else{
-        alert("Playlist terminata");
-    }
-}
 
 
 
