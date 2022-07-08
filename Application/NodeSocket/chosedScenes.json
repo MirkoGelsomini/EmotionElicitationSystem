@@ -1,1 +1,12 @@
+<<<<<<< HEAD
 [{"id":2,"movie title":" Schindler’s list","emotions":"Anger","URL":"https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=2.mp4"},{"id":19,"movie title":" Schindler’s list","emotions":"Sadness","URL":"https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=19.mp4"},{"id":68,"movie title":" Schindler’s list","emotions":"Anger","URL":"https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=68.mp4"}]
+=======
+[
+	{
+		"id": 68,
+		"movie title": " Schindler’s list",
+		"emotions": "Anger",
+		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=68.mp4"
+	}
+]
+>>>>>>> ed73b682da10538be1a817c738642a9d32f11214

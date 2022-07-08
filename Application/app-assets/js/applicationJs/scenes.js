@@ -24,7 +24,6 @@ ws.addEventListener("message",(data)=>{
             loadStartingOption();
             break;
         case 3:
-            console.log(data.data);
             changeWindowToPlayer();
             break;
         default:
@@ -167,12 +166,10 @@ function countScenesAvailable(){
     }else{
         document.getElementById('counter-scenes').innerHTML = "Scene trovate: "+chosenScenes.length;
     }
-    console.log(chosenScenes);
 }
 
 function saveChosenScenes(){
     messageCodeExpected = 3;
-    console.log("3)"+JSON.stringify(chosenScenes));
     ws.send("3)"+JSON.stringify(chosenScenes));
 }
 
