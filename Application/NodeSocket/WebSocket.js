@@ -33,20 +33,6 @@ wss.on('connection', (ws)=>{
             default:
                 ws.send("Message code not correct")
         }
-        if(splits[0]==="ciao"){
-            ws.send("hello");
-        }else if(splits[0]==="hello"){
-            ws.send("ciao");
-        }
-
-        /*const message = JSON.parse(messageAsString);
-        const metadata = clients.get(ws);
-        message.sender = metadata.id;
-        message.color = metadata.color;
-        const outbound = JSON.stringify(message);
-        [...clients.keys()].forEach((client) =>{
-            client.send(outbound);
-        });*/
    });
 
     ws.on("close", () => {
