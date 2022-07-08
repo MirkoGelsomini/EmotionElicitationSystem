@@ -180,6 +180,16 @@ videoContainer.onmousemove = function(){
 }
 
 videoContainer.onfullscreenchange = ()=>{
+    console.log("cambiato");
+    if(isFullScreen){
+        videoContainer.classList.add("hover")
+    }else{
+        videoContainer.classList.remove("hover")
+    }
+    isFullScreen = !isFullScreen
+};
+videoContainer.onwebkitfullscreenchange = ()=>{
+    console.log("cambiato");
     if(isFullScreen){
         videoContainer.classList.add("hover")
     }else{
