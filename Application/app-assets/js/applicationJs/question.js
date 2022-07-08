@@ -6,7 +6,10 @@ var messageCodeExpected = 0;
 
 const radios = document.getElementById
 const confirmBtn = document.getElementById('confirm-button');
-const myModal = new bootstrap.Modal(document.getElementById("Questions"), {});
+const saveBtn = document.getElementById('save-button');
+const questionModal = new bootstrap.Modal(document.getElementById("Questions"), {});
+const thanksModal = new bootstrap.Modal(document.getElementById("Thanks"), {});
+
 const emotions = ["Amusement","Anger","Sadness","Tenderness","Fear","Disgust"];
 const videoPlaystDiv = document.getElementById("playlist");
 
@@ -40,14 +43,14 @@ function startAnalyzing(){
     nextTrack();
 }
 function endAnalyzing(){
-    alert("Test Completato Grazie per la disponibilità");
+    window.location.href="OperatorPage.html";
 }
 
 
 function askQuestion(){  
     passedScene = currentScene;
     emotions.forEach((e)=>$('#'+e+' input:radio').prop('checked',false));
-    myModal.show();  
+    questionModal.show();  
 }
 
 
@@ -66,6 +69,30 @@ function nextTrack(){
     }
 }
 
+function thanks(){
+    thanksModal.show();
+}
+
+function save(){
+    messageCodeExpected = 4;
+    ws.send("4)"+JSON.stringify(statistics));
+}
+
+function validateAnswer(emotion){
+    let answer = $('#'+emotion+' input:radio:checked').val();
+        if(answer != undefined){
+            document.getElementById(emotion+"-validation").className = "validation-hidden";
+            document.getElementById(emotion+"-validation").innerHTML = "";
+            return answer;
+        }else{
+            document.getElementById(emotion+"-validation").className = "validation-shown";
+            document.getElementById(emotion+"-validation").innerHTML = "Seleziona la tua risposta";
+        }
+}
+saveBtn.onclick = function(){
+    save();
+    thanksModal.hide();
+}
 
 confirmBtn.onclick = function(){
     let questionsAnswer = [];
@@ -84,23 +111,12 @@ confirmBtn.onclick = function(){
         })
         statistics.push(dict);
         console.log(statistics);
-        myModal.hide();
-        if(playlist.length == 0){
-            messageCodeExpected = 4;
-            ws.send("4)"+JSON.stringify(statistics));
+        questionModal.hide();
+        if(playlist.length == 0 && currentScene == undefined){
+            thanks();
         }
     }
 }
 
-function validateAnswer(emotion){
-    let answer = $('#'+emotion+' input:radio:checked').val();
-        if(answer != undefined){
-            document.getElementById(emotion+"-validation").className = "validation-hidden";
-            document.getElementById(emotion+"-validation").innerHTML = "";
-            return answer;
-        }else{
-            document.getElementById(emotion+"-validation").className = "validation-shown";
-            document.getElementById(emotion+"-validation").innerHTML = "Seleziona la tua risposta";
-        }
-}
+
 
