@@ -1,0 +1,30 @@
+[
+	{
+		"Scene": {
+			"id": 2,
+			"movie title": " Schindler’s list",
+			"emotions": "Anger",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=2.mp4"
+		},
+		"Amusement": "3",
+		"Anger": "3",
+		"Sadness": "1",
+		"Tenderness": "4",
+		"Fear": "1",
+		"Disgust": "5"
+	},
+	{
+		"Scene": {
+			"id": 10,
+			"movie title": "Trainspotting",
+			"emotions": "Disgust",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=10.mp4"
+		},
+		"Amusement": "3",
+		"Anger": "4",
+		"Sadness": "2",
+		"Tenderness": "4",
+		"Fear": "2",
+		"Disgust": "4"
+	}
+]

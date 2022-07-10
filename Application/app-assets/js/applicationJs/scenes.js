@@ -20,7 +20,7 @@ ws.addEventListener("open", ()=>{
 ws.addEventListener("message",(data)=>{
     switch(messageCodeExpected){
         case 1:
-            allScenes = JSON.parse(data.data)["Scenes"];
+            allScenes = JSON.parse(data.data);
             loadStartingOption();
             break;
         case 3:
@@ -131,7 +131,7 @@ function countScenesAvailable(){
     var emotionsSelected = []; 
     
     if(idsHtmlSelected.length !== 0){
-        idsHtmlSelected.forEach((e)=> idsSelected.push(Number(e.value)));
+        idsHtmlSelected.forEach((e)=> idsSelected.push(e.value));
     }
     if(titlesHtmlSelected.length !== 0){
         titlesHtmlSelected.forEach((e )=> titlesSelected.push(e.value));

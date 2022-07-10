@@ -2,8 +2,9 @@ const WebSocket = require('ws');
 const fs = require('fs');
 const path = require('path')
 const wss = new WebSocket.Server({port: 7075});
-let allScenesJSON = JSON.parse(fs.readFileSync(require('path').resolve(__dirname, '.')+"/movieData.json"));
+let allScenesJSON = JSON.parse(fs.readFileSync(require('path').resolve(__dirname, '.')+"/movieDataIt.json"));
 let chosedScenesJSON = JSON.parse(fs.readFileSync(require('path').resolve(__dirname, '.')+"/chosedScenes.json"));
+console.log(allScenesJSON);
 let everReadNumber = false;
 let numberAnalysis = 0;
 wss.on('connection', (ws)=>{

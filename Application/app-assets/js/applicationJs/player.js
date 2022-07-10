@@ -183,17 +183,22 @@ videoContainer.onfullscreenchange = ()=>{
     console.log("cambiato");
     if(isFullScreen){
         videoContainer.classList.add("hover")
+        myVideo.classList.remove("video-fullscreen");
     }else{
         videoContainer.classList.remove("hover")
+        myVideo.classList.add("video-fullscreen");
     }
     isFullScreen = !isFullScreen
 };
+
 videoContainer.onwebkitfullscreenchange = ()=>{
     console.log("cambiato");
     if(isFullScreen){
         videoContainer.classList.add("hover")
+        myVideo.classList.remove("video-fullscreen");
     }else{
         videoContainer.classList.remove("hover")
+        myVideo.classList.add("video-fullscreen");
     }
     isFullScreen = !isFullScreen
 };
