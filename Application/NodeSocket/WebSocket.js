@@ -4,9 +4,9 @@ const path = require('path')
 const wss = new WebSocket.Server({port: 7075});
 let allScenesJSON = JSON.parse(fs.readFileSync(require('path').resolve(__dirname, '.')+"/movieDataIt.json"));
 let chosedScenesJSON = JSON.parse(fs.readFileSync(require('path').resolve(__dirname, '.')+"/chosedScenes.json"));
-console.log(allScenesJSON);
 let everReadNumber = false;
 let numberAnalysis = 0;
+console.log(allScenesJSON);
 wss.on('connection', (ws)=>{
     console.log("new client connected")
     if(!everReadNumber){

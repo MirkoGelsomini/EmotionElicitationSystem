@@ -1,0 +1,101 @@
+.top-part {
+    height: 65vh; 
+    overflow:auto; 
+    overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 4px;
+background-color: rgba(88, 63, 106, 0.7);
+box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.filter-part{
+height: 60vh;
+overflow: auto;
+overflow-y: scroll;
+overflow-x: hidden;
+}
+
+.top-buffer{
+margin-top: 20px;
+height: 20vh;
+}
+
+
+
+@media(max-width: 768px){
+.filters{
+    display: none;
+}
+
+#filter-toggle{ 
+    display: block !important;
+}
+
+}
+@media(min-width: 768px){
+    .filters{
+        display: block !important;
+    }
+    #filter-toggle{  
+        display: none !important;
+    }
+}
+
+img{
+position: absolute;
+top:0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+.scenesBtn::before{
+    color: white;
+    content: '\f067';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 15px;
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+}
+
+.scenesBtn.addBtn::before{
+    content: '\f067';
+}
+.removeBtn::before{
+    content: '\f2ed';
+}
+
+.playBtn::before{
+    content: '\f144';
+}
+
+.scroll{
+    max-height: 10vh;
+    overflow-y: auto;
+}
+
+.playlistBtn{
+    color: white;
+    content: '\f067';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 15px;
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased; 
+}
+
+.filtersDelete{
+    color: white;
+    content: '\f067';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 10px;
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased; 
+}
+
+

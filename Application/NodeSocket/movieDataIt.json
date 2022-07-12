@@ -3,384 +3,441 @@
         "id": "1-Postino",
         "movie title": "I visitatori",
         "emotions": "Divertimento   ",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=1.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=1.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=1.jpg"
     },
     {
         "id": "2-Balcone",
         "movie title": " Schindler\u2019s list",
         "emotions": "Rabbia",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=2.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=2.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=2.jpg"
     },
     {
         "id": "3-Suicidio",
         "movie title": "L'attimo fuggente",
         "emotions": "Tristezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=3.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=3.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=3.jpg"
     },
     {
         "id": "4-Abbandono",
         "movie title": "L'ottavo giorno",
         "emotions": "Tenerezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=4.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=4.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=4.jpg"
     },
     {
         "id": "5-Furto Auto",
         "movie title": "American History X",
         "emotions": "Rabbia",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=5.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=5.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=5.jpg"
     },
     {
         "id": "7-Accidia",
         "movie title": "Seven",
         "emotions": "Paura",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=7.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=7.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=7.jpg"
     },
     {
         "id": "9-Ospedale",
         "movie title": "E.T.",
         "emotions": "Tristezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=9.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=9.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=9.jpg"
     },
     {
         "id": "10-Morte Infante",
         "movie title": "Trainspotting",
         "emotions": "Disgusto",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=10.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=10.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=10.jpg"
     },
     {
         "id": "11-Omicidio",
         "movie title": "Il cameramen e l'assassino",
         "emotions": "Rabbia",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=11.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=11.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=11.jpg"
     },
     {
         "id": "12-Cretino",
         "movie title": "La cena dei cretini",
         "emotions": "Divertimento   ",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=12.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=12.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=12.jpg"
     },
     {
         "id": "13-Lettera",
         "movie title": "La vita sognata degli angeli",
         "emotions": "Tristezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=13.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=13.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=13.jpg"
     },
     {
         "id": "14-Finto Orgasmo",
         "movie title": "Harry, ti presento Sally",
         "emotions": "Divertimento   ",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=14.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=14.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=14.jpg"
     },
     {
         "id": "15-Scoperta Figlio",
         "movie title": "Forrest Gump",
         "emotions": "Tenerezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=15.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=15.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=15.jpg"
     },
     {
         "id": "16-Omicidio al telefono",
         "movie title": " Scream 1",
         "emotions": "Paura",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=16.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=16.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=16.jpg"
     },
     {
         "id": "17-Feci",
         "movie title": "Trainspotting",
         "emotions": "Disgusto",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=17.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=17.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=17.jpg"
     },
     {
         "id": "18-Fuga",
         "movie title": "L\u00e9on",
         "emotions": "Tenerezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=18.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=18.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=18.jpg"
     },
     {
         "id": "19-Forni",
-        "movie title": "Schindler\u2019s list",
+        "movie title": " Schindler\u2019s list",
         "emotions": "Tristezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=19.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=19.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=19.jpg"
     },
     {
         "id": "21-Pena di Morte",
         "movie title": "Deadman walking-Condannato a Morte",
         "emotions": "Tristezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=21.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=21.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=21.jpg"
     },
     {
         "id": "22-Autopsia",
         "movie title": "Il silenzio degli innocenti",
         "emotions": "Disgusto",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=22.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=22.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=22.jpg"
     },
     {
         "id": "23-Figuraccia",
         "movie title": "Un pesce di nome Wanda",
         "emotions": "Divertimento   ",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=23.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=23.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=23.jpg"
     },
     {
         "id": "24-Esorcismo",
         "movie title": "L'Esorcista",
         "emotions": "Paura",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=24.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=24.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=24.jpg"
     },
     {
         "id": "25-Omicidio Signora",
         "movie title": "Sleepers",
         "emotions": "Rabbia",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=25.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=25.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=25.jpg"
     },
     {
         "id": "26-Piscina",
         "movie title": "Amarsi",
         "emotions": "Tenerezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=26.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=26.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=26.jpg"
     },
     {
         "id": "27-Sbarco Normandia",
         "movie title": "Salvate il soldato Ryan",
         "emotions": "Disgusto",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=27.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=27.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=27.jpg"
     },
     {
         "id": "28-Lupo Cattivo",
         "movie title": "The Shining",
         "emotions": "Paura",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=28.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=28.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=28.jpg"
     },
     {
         "id": "30-interrogatorio",
         "movie title": "Nel nome del padre",
         "emotions": "Rabbia",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=30.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=30.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=30.jpg"
     },
     {
         "id": "31-Catacombe",
         "movie title": "Indiana Jones e l'ultima crociata",
         "emotions": "Disgusto",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=31.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=31.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=31.jpg"
     },
     {
         "id": "32-Omicidio Poliziotta",
         "movie title": "Copycat - Omicidi in serie",
         "emotions": "Paura",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=32.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=32.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=32.jpg"
     },
     {
         "id": "33-Vaso",
         "movie title": "Ghost",
         "emotions": "Tenerezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=33.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=33.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=33.jpg"
     },
     {
         "id": "34-Autoerotismo",
         "movie title": "Tutti pazzi per Mary",
         "emotions": "Divertimento   ",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=34.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=34.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=34.jpg"
     },
     {
         "id": "35-Morte Infante",
         "movie title": "Trainspotting",
         "emotions": "Disgusto",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=35.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=35.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=35.jpg"
     },
     {
         "id": "36-Lettera",
         "movie title": " La citt\u00e0 degli angeli",
         "emotions": "Tristezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=36.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=36.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=36.jpg"
     },
     {
         "id": "38-Barchetta",
         "movie title": " It",
         "emotions": "Paura",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=38.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=38.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=38.jpg"
     },
     {
         "id": "39-Amputazione",
         "movie title": "La pianista",
         "emotions": "Rabbia",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=39.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=39.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=39.jpg"
     },
     {
         "id": "41-Beethoven Strage",
         "movie title": "L\u00e9on",
         "emotions": "Rabbia",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=41.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=41.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=41.jpg"
     },
     {
         "id": "42-Francese",
         "movie title": "Le pari",
         "emotions": "Divertimento   ",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=42francese.mpeg"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=42francese.mpeg",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=42francese.jpg"
     },
     {
         "id": "43-Accerchiamento",
         "movie title": "Un mondo perfetto",
         "emotions": "Tristezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=43.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=43.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=43.jpg"
     },
     {
         "id": "44-Megafono",
         "movie title": "La vita \u00e8  bella",
         "emotions": "Tenerezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=44.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=44.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=44.jpg"
     },
     {
         "id": "45-Neutralit\u00e0it\u00e0",
         "movie title": "Blue",
         "emotions": "Neutralit\u00e0",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=45.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=45.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=45.jpg"
     },
     {
         "id": "46-Sgabuzzino",
         "movie title": "La bambola assassina 2",
         "emotions": "Paura",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=46.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=46.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=46.jpg"
     },
     {
         "id": "47-Lingua Piscina",
         "movie title": "The dentist",
         "emotions": "Disgusto",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=47.mpeg"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=47.mpeg",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=47.jpg"
     },
     {
         "id": "48-Regole Campo",
         "movie title": "La vita \u00e8  bella",
         "emotions": "Tenerezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=48.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=48.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=48.jpg"
     },
     {
         "id": "49-Neutralit\u00e0it\u00e0",
         "movie title": "Blue",
         "emotions": "Neutralit\u00e0",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=49.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=49.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=49.jpg"
     },
     {
         "id": "50-Spacca Piedi",
         "movie title": "Misery non deve morire",
         "emotions": "Paura",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=50.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=50.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=50.jpg"
     },
     {
         "id": "51-Stupro Escort",
         "movie title": "Via da Las Vegas",
         "emotions": "Rabbia",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=51.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=51.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=51.jpg"
     },
     {
         "id": "52-Notizia Morte",
         "movie title": "Pensieri pericolosi",
         "emotions": "Tristezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=52.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=52.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=52.jpg"
     },
     {
         "id": "53-Sesso Sotto Bombe",
         "movie title": "Underground",
         "emotions": "Divertimento   ",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=53francese.mpeg"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=53francese.mpeg",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=53francese.jpg"
     },
     {
         "id": "54-Morte Padre",
         "movie title": "La vita \u00e8  bella",
         "emotions": "Tristezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=54.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=54.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=54.jpg"
     },
     {
         "id": "55-Casa",
         "movie title": "Il mistero della strega di blair",
         "emotions": "Paura",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=55.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=55.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=55.jpg"
     },
     {
         "id": "56-Balla Improvvisato",
         "movie title": "Benny & Joone",
         "emotions": "Tenerezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=56.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=56.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=56.jpg"
     },
     {
         "id": "57-Nascita Creatura",
         "movie title": "Hellraiser",
         "emotions": "Disgusto",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=57.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=57.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=57.jpg"
     },
     {
         "id": "58-Neutralit\u00e0",
         "movie title": "L'amante",
         "emotions": "Neutralit\u00e0",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=58.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=58.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=58.jpg"
     },
     {
         "id": "59-Capitano",
         "movie title": "L'attimo fuggente",
         "emotions": "Tenerezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=59.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=59.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=59.jpg"
     },
     {
         "id": "61-Cane",
         "movie title": "Tutti pazzi per Mary",
-        "emotions": "Divertimento   ",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=61.mp4"
+        "emotions": "Divertimento",
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=61.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=61.jpg"
     },
     {
         "id": "62-Opera",
         "movie title": "Philadelphia",
         "emotions": "Tristezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=62.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=62.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=62.jpg"
     },
     {
         "id": "63-Stupro moglie",
         "movie title": "Il cameramen e l'assassino",
         "emotions": "Disgusto",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=63.mpeg"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=63.mpeg",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=63.jpg"
     },
     {
         "id": "64-Neutralit\u00e0it\u00e0",
         "movie title": "Blue",
         "emotions": "Neutralit\u00e0",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=64.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=64.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=64.jpg"
     },
     {
         "id": "65-Finale",
         "movie title": "Seven",
         "emotions": "Rabbia",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=65.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=65.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=65.jpg"
     },
     {
         "id": "66-Scuola Cinema",
         "movie title": "Scream 2",
         "emotions": "Paura",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=66.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=66.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=66.jpg"
     },
     {
         "id": "67-Francese",
         "movie title": "Quattro delitti in allegria",
         "emotions": "Divertimento   ",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=67.mpeg"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=67.mpeg",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=67francese.jpg"
     },
     {
         "id": "68-Piano Sparatoria",
         "movie title": " Schindler\u2019s list",
         "emotions": "Rabbia",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=68.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=68.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=68.jpg"
     },
     {
         "id": "69-Gola",
         "movie title": "Seven",
         "emotions": "Disgusto",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=69.mp4"
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=69.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=69.jpg"
     },
     {
         "id": "70-Carroarmato Vittoria",
         "movie title": "La vita \u00e8  bella",
         "emotions": "Tenerezza",
-        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=70.mp4"
-    },
-    {
-        "id": null,
-        "movie title": null,
-        "emotions": null,
-        "URL": null
+        "URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=70.mp4",
+        "URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=70.jpg"
     }
 ]
