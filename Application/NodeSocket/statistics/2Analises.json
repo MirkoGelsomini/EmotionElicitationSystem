@@ -1,0 +1,82 @@
+[
+	{
+		"Scene": {
+			"id": "4-Abbandono",
+			"movie title": "L'ottavo giorno",
+			"emotions": "Tenerezza",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=4.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=4.jpg"
+		},
+		"Amusement": "3",
+		"Anger": "4",
+		"Sadness": "4",
+		"Tenderness": "5",
+		"Fear": "1",
+		"Disgust": "3",
+		"Neutrality": "1"
+	},
+	{
+		"Scene": {
+			"id": "2-Balcone",
+			"movie title": " Schindler’s list",
+			"emotions": "Rabbia",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=2.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=2.jpg"
+		},
+		"Amusement": "1",
+		"Anger": "4",
+		"Sadness": "4",
+		"Tenderness": "3",
+		"Fear": "1",
+		"Disgust": "3",
+		"Neutrality": "1"
+	},
+	{
+		"Scene": {
+			"id": "7-Accidia",
+			"movie title": "Seven",
+			"emotions": "Paura",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=7.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=7.jpg"
+		},
+		"Amusement": "1",
+		"Anger": "1",
+		"Sadness": "1",
+		"Tenderness": "1",
+		"Fear": "4",
+		"Disgust": "4",
+		"Neutrality": "2"
+	},
+	{
+		"Scene": {
+			"id": "9-Ospedale",
+			"movie title": "E.T.",
+			"emotions": "Tristezza",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=9.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=9.jpg"
+		},
+		"Amusement": "1",
+		"Anger": "1",
+		"Sadness": "3",
+		"Tenderness": "3",
+		"Fear": "1",
+		"Disgust": "1",
+		"Neutrality": "4"
+	},
+	{
+		"Scene": {
+			"id": "16-Omicidio al telefono",
+			"movie title": " Scream 1",
+			"emotions": "Paura",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=16.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=16.jpg"
+		},
+		"Amusement": "1",
+		"Anger": "1",
+		"Sadness": "1",
+		"Tenderness": "1",
+		"Fear": "1",
+		"Disgust": "1",
+		"Neutrality": "1"
+	}
+]

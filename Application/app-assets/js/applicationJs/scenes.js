@@ -17,7 +17,7 @@ const playlist = document.getElementById('playlist');
 const formArray = [selectByTitle, selectByEmotion];
 var idsHtmlSelected = [];
 
-//----WebSocketPart----
+//----Start WebSocketPart----
 const ws = new WebSocket("ws://localhost:7075");
 ws.addEventListener("open", () => {
     console.log("connected");
@@ -46,9 +46,11 @@ function loadScenes() {
 
 function loadStartingOption() {
     allScenes.forEach(element => {
-        movieTitleSet.add(element["movie title"]);
+        movieTitleSet.add(element["movie title"].trim());
         emotionSet.add(element["emotions"]);
     });
+    movieTitleSet = new Set(Array.from(movieTitleSet).sort());
+    emotionSet = new Set(Array.from(emotionSet).sort());
     addFilteredCards();
     createOptionsFromSet(movieTitleSet, selectByTitle);
     createOptionsFromSet(emotionSet, selectByEmotion);

@@ -1,0 +1,18 @@
+[
+	{
+		"Scene": {
+			"id": "66-Scuola Cinema",
+			"movie title": "Scream 2",
+			"emotions": "Paura",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=66.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=66.jpg"
+		},
+		"Amusement": "1",
+		"Anger": "1",
+		"Sadness": "1",
+		"Tenderness": "1",
+		"Fear": "1",
+		"Disgust": "1",
+		"Neutrality": "1"
+	}
+]

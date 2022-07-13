@@ -1,226 +1,112 @@
 <!DOCTYPE html>
-<html
-  class="loading dark-layout"
-  lang="en"
-  data-layout="dark-layout"
-  data-textdirection="ltr"
-  id="main"
->
-  <!-- BEGIN: Head-->
+<html class="loading dark-layout" lang="en" data-layout="dark-layout" data-textdirection="ltr" id="main">
+<!-- BEGIN: Head-->
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1.0,user-scalable=0"
-    />
-    <meta
-      name="keywords"
-      content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"
-    />
-    <meta name="author" content="PIXINVENT" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
-      rel="stylesheet"
-    />
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+  <meta name="keywords"
+    content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app" />
+  <meta name="author" content="PIXINVENT" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
+    rel="stylesheet" />
 
-    <!-- BEGIN: Vendor CSS-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/vendors/css/vendors.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/vendors/css/editors/quill/katex.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/vendors/css/editors/quill/monokai-sublime.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/vendors/css/editors/quill/quill.snow.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/vendors/css/charts/apexcharts.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/vendors/css/extensions/toastr.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/vendors/css/forms/select/select2.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://fonts.googleapis.com/css2?family=Inconsolata&amp;family=Roboto+Slab&amp;family=Slabo+27px&amp;family=Sofia&amp;family=Ubuntu+Mono&amp;display=swap"
-    />
-    <!-- END: Vendor CSS-->
+  <!-- BEGIN: Vendor CSS-->
+  <link rel="stylesheet" type="text/css" href="../../app-assets/vendors/css/vendors.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/vendors/css/editors/quill/katex.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/vendors/css/editors/quill/monokai-sublime.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/vendors/css/editors/quill/quill.snow.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/vendors/css/charts/apexcharts.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/vendors/css/extensions/toastr.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/vendors/css/forms/select/select2.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css2?family=Inconsolata&amp;family=Roboto+Slab&amp;family=Slabo+27px&amp;family=Sofia&amp;family=Ubuntu+Mono&amp;display=swap" />
+  <!-- END: Vendor CSS-->
 
-    <!-- BEGIN: Theme CSS-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/css/bootstrap.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/css/bootstrap-extended.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/css/colors.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/css/components.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/css/themes/dark-layout.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/css/themes/bordered-layout.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/css/themes/semi-dark-layout.css"
-    />
+  <!-- BEGIN: Theme CSS-->
+  <link rel="stylesheet" type="text/css" href="../../app-assets/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/css/bootstrap-extended.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/css/colors.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/css/components.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/css/themes/dark-layout.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/css/themes/bordered-layout.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/css/themes/semi-dark-layout.css" />
 
-    <!-- BEGIN: Page CSS-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/css/core/menu/menu-types/horizontal-menu.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/css/plugins/charts/chart-apex.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/css/plugins/extensions/ext-component-toastr.css"
-    />
-    <!-- END: Page CSS-->
+  <!-- BEGIN: Page CSS-->
+  <link rel="stylesheet" type="text/css" href="../../app-assets/css/core/menu/menu-types/horizontal-menu.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/css/plugins/charts/chart-apex.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/css/plugins/extensions/ext-component-toastr.css" />
+  <!-- END: Page CSS-->
 
-    <!--BEGIN: Player CSS-->
-    <link
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      rel="stylesheet"
-    />
-    <!--END: Player CSS-->
+  <!--BEGIN: Player CSS-->
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" />
+  <!--END: Player CSS-->
 
-    <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../app-assets/css/operator.css"
-    />
-    <!-- END: Custom CSS-->
-  </head>
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="../../app-assets/css/operator.css" />
+  <!-- END: Custom CSS-->
+</head>
 
-  <body
-    class="horizontal-layout horizontal-menu text-center align-content-center justify-content-center"
-  >
-    <!--BEGIN: Navbar-->
-    <nav
-      class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center"
-    >
-      <div class="navbar-container d-flex content">
-        <ul class="nav navbar-nav">
-          <li>
-            <a id="filter-toggle"><i class="ficon" data-feather="menu"></i></a>
-          </li>
-          <li></li>
-          <li style="font-size: 20px; font-weight: bold">
-            Pagina Selezione Scene
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!--END: Navbar-->
-    <!-- BEGIN: Content-->
-    <div class="app-content content overflow-hidden">
-      <div class="content-wrapper container-xxl p-0">
-        <div class="content-body">
-          <div class="row">
-            <!-- Filter Card -->
-            <div class="col-xl-2 col-md-3 col-12 text-center top-part">
-              <div class="card filter-part">
-                <br />
-                <br />
-                <div class="row">
-                    <div class="col-xl-7 col-md-7 col-7 text-center justify-content-center">
-                        <h4 style="font-size: 18px">
-                            Filtri</i>
-                        </h4>  
-                    </div>  
-                    <div class="col-xl-5 col-md-5 col-5 text-center">
-                        <button id="clear-filters"class="btn btn-danger filtersDelete removeBtn float-start"></button> 
-                    </div>     
+<body class="horizontal-layout horizontal-menu text-center align-content-center justify-content-center">
+  <!--BEGIN: Navbar-->
+  <nav class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center">
+    <div class="navbar-container d-flex content">
+      <ul class="nav navbar-nav">
+        <li style="font-size: 20px; font-weight: bold">
+          Pagina Selezione Scene
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--END: Navbar-->
+  <!-- BEGIN: Content-->
+  <div class="app-content content overflow-hidden">
+    <div class="content-wrapper p-0">
+      <div class="content-body">
+        <div class="row">
+          <!-- Filter Card -->
+          <div class="col-xxl-2 col-xl-2 col-md-3 col-12 text-center top-part">
+            <div class="card filter-part">
+              <br />
+              <br />
+              <div class="row">
+                <div class="col-xl-7 col-md-7 col-7 text-center justify-content-center">
+                  <h4 style="font-size: 18px">
+                    Filtri</i>
+                  </h4>
                 </div>
-                <div class="card-body">
-                  <h5 style="font-size: 15px">Emozioni</h5>
-                  <select
-                    class="select2 form-select"
-                    multiple="multiple"
-                    id="select-by-emotion"
-                  ></select>
-                  <hr />
-                  <h5 style="font-size: 15px">Titoli</h5>
-                  <select
-                    class="select2 form-select"
-                    multiple="multiple"
-                    id="select-by-title"
-                  ></select>
+                <div class="col-xl-5 col-md-5 col-5 text-center">
+                  <button id="clear-filters" class="btn btn-danger filtersDelete removeBtn float-start"></button>
                 </div>
               </div>
+              <div class="card-body">
+                <h5 style="font-size: 15px">Emozioni</h5>
+                <select class="select2 form-select" multiple="multiple" id="select-by-emotion"></select>
+                <hr />
+                <h5 style="font-size: 15px">Titoli</h5>
+                <select class="select2 form-select" multiple="multiple" id="select-by-title"></select>
+              </div>
             </div>
-            <div class="col-xl-10 col-md-9 col-12 text-center">
-              <div class="row top-part" id="scenes-filtered"></div>
-            </div>
-            <br />
           </div>
-          <div class="row top-buffer">
-            <div class="col-xl-12 col-md-12 col-12 text-center">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-xl-9 col-md-9 col-9 text-center">
-                      <div class="scroll" id="playlist">Playlist vuota</div>
-                    </div>
-                    <div class="col-xl-3 col-md-3 col-3 text-center">
-                      <button
-                        id="clear-playlist"
-                        class="btn btn-danger playlistBtn removeBtn"
-                      ></button>
-                      <button
-                        id="play-playlist"
-                        class="btn btn-success playlistBtn playBtn"
-                      ></button>
-                    </div>
+          <div class="col-xxl-10 col-xl-10 col-md-9 col-12 text-center">
+            <div class="row top-part" id="scenes-filtered"></div>
+          </div>
+          <br />
+        </div>
+        <div class="row top-buffer">
+          <div class="col-xl-12 col-md-12 col-12 text-center">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-xl-9 col-md-9 col-9 text-center">
+                    <div class="scroll" id="playlist">Playlist vuota</div>
+                  </div>
+                  <div class="col-xl-3 col-md-3 col-3 text-center">
+                    <button id="clear-playlist" class="btn btn-danger playlistBtn removeBtn"></button>
+                    <button id="play-playlist" class="btn btn-success playlistBtn playBtn"></button>
                   </div>
                 </div>
               </div>
@@ -229,45 +115,47 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- BEGIN: Vendor JS-->
-    <script src="../../app-assets/vendors/js/vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
+  <!-- BEGIN: Vendor JS-->
+  <script src="../../app-assets/vendors/js/vendors.min.js"></script>
+  <!-- BEGIN Vendor JS-->
 
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="../../app-assets/vendors/js/ui/jquery.sticky.js"></script>
-    <script src="../../app-assets/vendors/js/editors/quill/katex.min.js"></script>
-    <script src="../../app-assets/vendors/js/editors/quill/highlight.min.js"></script>
-    <script src="../../app-assets/vendors/js/editors/quill/quill.min.js"></script>
-    <script src="../../app-assets/vendors/js/charts/apexcharts.min.js"></script>
-    <script src="../../app-assets/vendors/js/extensions/toastr.min.js"></script>
-    <script src="../../app-assets/vendors/js/forms/select/select2.full.min.js"></script>
-    <!-- END: Page Vendor JS-->
+  <!-- BEGIN: Page Vendor JS-->
+  <script src="../../app-assets/vendors/js/ui/jquery.sticky.js"></script>
+  <script src="../../app-assets/vendors/js/editors/quill/katex.min.js"></script>
+  <script src="../../app-assets/vendors/js/editors/quill/highlight.min.js"></script>
+  <script src="../../app-assets/vendors/js/editors/quill/quill.min.js"></script>
+  <script src="../../app-assets/vendors/js/charts/apexcharts.min.js"></script>
+  <script src="../../app-assets/vendors/js/extensions/toastr.min.js"></script>
+  <script src="../../app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+  <!-- END: Page Vendor JS-->
 
-    <!-- BEGIN: Theme JS-->
-    <script src="../../app-assets/js/core/app-menu.js"></script>
-    <script src="../../app-assets/js/core/app.js"></script>
-    <!-- END: Theme JS-->
+  <!-- BEGIN: Theme JS-->
+  <script src="../../app-assets/js/core/app-menu.js"></script>
+  <script src="../../app-assets/js/core/app.js"></script>
+  <!-- END: Theme JS-->
 
-    <!-- BEGIN: Page JS-->
-    <script src="../../app-assets/js/scripts/forms/form-select2.js"></script>
-    <!-- END: Page JS-->
+  <!-- BEGIN: Page JS-->
+  <script src="../../app-assets/js/scripts/forms/form-select2.js"></script>
+  <!-- END: Page JS-->
 
-    <!-- BEGIN: Player JS-->
-    <script src="../../app-assets/js/applicationJs/scenes.js"></script>
-    <!-- END: Player JS-->
+  <!-- BEGIN: Player JS-->
+  <script src="../../app-assets/js/applicationJs/scenes.js"></script>
+  <!-- END: Player JS-->
 
-    <script>
-      $(window).on("load", function () {
-        if (feather) {
-          feather.replace({
-            width: 14,
-            height: 14,
-          });
-        }
-        var objSad = [];
-      });
-    </script>
-  </body>
-  <!-- END: Body-->
+  <script>
+    $(window).on("load", function () {
+      if (feather) {
+        feather.replace({
+          width: 14,
+          height: 14,
+        });
+      }
+      var objSad = [];
+    });
+  </script>
+</body>
+<!-- END: Body-->
+
 </html>

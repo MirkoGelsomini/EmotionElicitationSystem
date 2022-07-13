@@ -10,8 +10,9 @@ const saveBtn = document.getElementById('save-button');
 const questionModal = new bootstrap.Modal(document.getElementById("Questions"), {});
 const thanksModal = new bootstrap.Modal(document.getElementById("Thanks"), {});
 
-const emotions = ["Amusement","Anger","Sadness","Tenderness","Fear","Disgust"];
+const emotions = ["Amusement","Anger","Sadness","Tenderness","Fear","Disgust","Neutrality"];
 const videoPlaystDiv = document.getElementById("playlist");
+const sceneTitle = document.getElementById("scene-title");
 
 //----WebSocketPart----
 const ws = new WebSocket("ws://localhost:7075");
@@ -59,7 +60,8 @@ function nextTrack(){
     if(currentScene.URL){
         myVideo.src = currentScene.URL;
         let text = []
-        playlist.forEach((e)=>{text.push(e.id+" "+e["movie title"]+" "+e.emotions+"<br>")});
+        sceneTitle.innerHTML = currentScene.id+" "+currentScene["movie title"]+" | "+currentScene.emotions;
+        playlist.forEach((e)=>{text.push(e.id+" "+e["movie title"]+" | "+e.emotions+"<br>")});
         videoPlaystDiv.innerHTML = text.join("");
         if(playlist.length == 0){
             videoPlaystDiv.innerHTML = "Nulla in coda";
@@ -82,13 +84,12 @@ function validateAnswer(emotion){
     let answer = $('#'+emotion+' input:radio:checked').val();
         if(answer != undefined){
             document.getElementById(emotion+"-validation").className = "validation-hidden";
-            document.getElementById(emotion+"-validation").innerHTML = "";
             return answer;
         }else{
             document.getElementById(emotion+"-validation").className = "validation-shown";
-            document.getElementById(emotion+"-validation").innerHTML = "Seleziona la tua risposta";
         }
 }
+
 saveBtn.onclick = function(){
     save();
     thanksModal.hide();
@@ -117,6 +118,5 @@ confirmBtn.onclick = function(){
         }
     }
 }
-
 
 

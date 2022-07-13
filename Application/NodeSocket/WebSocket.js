@@ -6,7 +6,6 @@ let allScenesJSON = JSON.parse(fs.readFileSync(require('path').resolve(__dirname
 let chosedScenesJSON = JSON.parse(fs.readFileSync(require('path').resolve(__dirname, '.')+"/chosedScenes.json"));
 let everReadNumber = false;
 let numberAnalysis = 0;
-console.log(allScenesJSON);
 wss.on('connection', (ws)=>{
     console.log("new client connected")
     if(!everReadNumber){
@@ -37,15 +36,12 @@ wss.on('connection', (ws)=>{
                       console.log(err);
                     else {
                       chosedScenesJSON = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.')+"/chosedScenes.json","utf-8"));
-                      console.log(chosedScenesJSON);
                       ws.send("File written successfully\n");
                     }
                 });
                 break;
             case "4":
                 var jsValue = JSON.parse(splits[1]);
-                
-                console.log(numberAnalysis);
                 fs.open(path.resolve(__dirname, './statistics')+"/"+numberAnalysis+"Analises.json", 'w', function (err, file) {
                     if (err) throw err;
                     console.log('Saved!');

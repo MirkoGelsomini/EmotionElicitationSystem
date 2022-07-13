@@ -46,7 +46,7 @@
     font-family: 'Font Awesome 5 Free';
     width: auto;
     height: auto;
-    font-size: 2vw;
+    font-size: 1vw;
     font-weight: 900;
     color: #fff;
     -webkit-font-smoothing: antialiased;
@@ -65,7 +65,7 @@
     font-family: 'Font Awesome 5 Free';
     width: auto;
     height: auto;
-    font-size: 2vw;
+    font-size: 1vw;
     font-weight: 900;
     color: #fff;
     -webkit-font-smoothing: antialiased;
@@ -87,7 +87,7 @@
 .bar{
     grid-area: "bar";
     position: relative;
-    height: 5px;
+    height: 10px;
     top: 0;
     left: 0;
     width: 100%;
@@ -97,7 +97,7 @@
 }
 
 .bar-content{
-    height: 5px;
+    height: 10px;
     width: 0px;
     background-color: rgb(104, 74, 236);
 }
@@ -116,7 +116,7 @@
 
 .time{
     justify-content: center;
-    font-size: 2vw;
+    font-size: 1vw;
     grid-area: "time";
     color: white;
     width: 100%;
@@ -139,7 +139,7 @@
     font-family: 'Font Awesome 5 Free';
     width: auto;
     height: auto;
-    font-size: 2vw;
+    font-size: 1vw;
     font-weight: 900;
     color: #fff;
     -webkit-font-smoothing: antialiased;
@@ -154,14 +154,20 @@
 }
 
 .validation-shown{
-    align-items: center;
-    font-size: 1.5vw;
     color: red;
+}
+
+.validation-hidden{
+    color: white;
 }
 
 .video-fullscreen{
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.space{
+    margin-top: 20px;
 }
 

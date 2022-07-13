@@ -19,8 +19,14 @@ const fullScreenBtn = document.getElementById('full-screen');
 var timeout;
 var isFullScreen = false;
 
-//Play Pause
 
+//--Start Play/Pause--
+
+/**
+ * function for change the icon
+ * of play/pause based on the video
+ * current state
+ */
 function togglePlayPause(){
     if(myVideo.paused){
         myVideo.play();
@@ -29,7 +35,7 @@ function togglePlayPause(){
     }
 }
 
-
+//--Start video listener--
 playBtn.onclick = function(){       
     togglePlayPause();
 };
@@ -51,9 +57,12 @@ myVideo.addEventListener('ended',()=>{
     askQuestion();
     nextTrack();
 })
+//--End video listener--
+//--End Play/Pause--
 
-//Progress Bar
+//--Start Progress Bar--
 
+//Progress Bar modification
 myVideo.addEventListener('timeupdate',function(){
     var barConPos = myVideo.currentTime / myVideo.duration;
     barContent.style.width = barConPos * 100 + "%";
@@ -64,13 +73,13 @@ myVideo.addEventListener('timeupdate',function(){
 
 
 //Change progress bar on  click
-
 bar.addEventListener('click',(e)=>{
     const progressTime = (e.offsetX / bar.offsetWidth)*myVideo.duration;
     myVideo.currentTime = progressTime;
 })
+//--End Progress Bar--
 
-//Volume Control
+//--Start Volume Control--
 
 volume.addEventListener('mousemove',(e)=>{
     myVideo.volume = e.target.value;
@@ -84,6 +93,13 @@ volume.addEventListener('mousemove',(e)=>{
     }
 })
 
+/**
+ * Function to mute or unmute the video
+ * saving the previous volume level.
+ * When the button is pressed if it was muted
+ * the volume level is set to the previous state,
+ * if it exists, otherwise it will set at the middle
+ */
 function toggleMuteUnmute(){
     if(!boolMuted){
         myVideo.volume = 0;
@@ -101,9 +117,14 @@ function toggleMuteUnmute(){
 volumeBtn.onclick = function(){
     toggleMuteUnmute();
 };
+//--End Volume Control--
 
-//FullScreen
+//--Start FullScreen Control--
 
+/**
+ * Control the change of the screen size for both
+ * Firefox and Chrome, changing the class for css part
+ */
 function fullScreenChange() { 
     if(!isFullScreen){
         if (myVideo.mozRequestFullScreen) {
@@ -130,42 +151,18 @@ function fullScreenChange() {
       
 }
 
-fullScreenBtn.onclick = function(){
-    fullScreenChange();
-}
-
-//Time progress
-
-function timeConverter(time){
-    var hour = addZero(parseInt(time / 3600));
-    var minutes = addZero(parseInt((time % 3600)/60));
-    var second = addZero(parseInt((time % 3600)%60));
-    return hour+":"+minutes+":"+second;
-}
-
-function addZero(timeToAdd){
-    var str = String(timeToAdd).length;
-    if(str === 1){   
-        return "0"+timeToAdd;
-    }else{
-        return timeToAdd;
-    }
-}
-
-const currentTime= ()=>{
-   currentTimeElement.innerHTML = timeConverter(myVideo.currentTime);
-   durationTimeElement.innerHTML = timeConverter(myVideo.duration);
-}
-
-myVideo.addEventListener('timeupdate', currentTime);
-
-
-
-function setTransform(){
+/**
+ * css style for non-fullScreen video (mouse hover)
+ */
+ function setTransform(){
     document.getElementById("controls").style.transform = " translateY(0)";
     document.getElementById("controls").style.transition= " all 0.2s ";
 }
 
+
+/**
+ * css style for fullScreen video (mouse move)
+ */
 function removeTransform(){
     document.getElementById("controls").style.removeProperty("transform")
     document.getElementById("controls").style.removeProperty("transition"); 
@@ -179,8 +176,13 @@ videoContainer.onmousemove = function(){
     }
 }
 
+//-- Start FullScreen Listener--
+fullScreenBtn.onclick = function(){
+    fullScreenChange();
+}
+
+
 videoContainer.onfullscreenchange = ()=>{
-    console.log("cambiato");
     if(isFullScreen){
         videoContainer.classList.add("hover")
         myVideo.classList.remove("video-fullscreen");
@@ -192,7 +194,6 @@ videoContainer.onfullscreenchange = ()=>{
 };
 
 videoContainer.onwebkitfullscreenchange = ()=>{
-    console.log("cambiato");
     if(isFullScreen){
         videoContainer.classList.add("hover")
         myVideo.classList.remove("video-fullscreen");
@@ -202,3 +203,54 @@ videoContainer.onwebkitfullscreenchange = ()=>{
     }
     isFullScreen = !isFullScreen
 };
+//-- End FullScreen Listener--
+//--end FullScreen Control--
+
+//--Start time progress--
+/**
+ * Convert a given number of seconds in 
+ * HH:MM:mm format
+ * @param {time in sec to convert} time 
+ * @returns second in HH:MM:mm format
+ */
+function timeConverter(time){
+    var hour = addZero(parseInt(time / 3600));
+    var minutes = addZero(parseInt((time % 3600)/60));
+    var second = addZero(parseInt((time % 3600)%60));
+    return hour+":"+minutes+":"+second;
+}
+
+/**
+ * Format the given string in 2 char format.
+ * If the string has only 1 char, will be
+ * add a '0' in front of it.
+ * 
+ * @param {string in time to format} timeToAdd 
+ * @returns formatted string
+ */
+function addZero(timeToAdd){
+    var str = String(timeToAdd).length;
+    if(str === 1){   
+        return "0"+timeToAdd;
+    }else{
+        return timeToAdd;
+    }
+}
+
+/**
+ * Update the time on the screen
+ */
+const currentTime= ()=>{
+   currentTimeElement.innerHTML = timeConverter(myVideo.currentTime);
+   durationTimeElement.innerHTML = timeConverter(myVideo.duration);
+}
+
+myVideo.addEventListener('timeupdate', currentTime);
+
+myVideo.addEventListener('loadedmetadata', currentTime);
+//--End time progress--
+
+
+
+
+

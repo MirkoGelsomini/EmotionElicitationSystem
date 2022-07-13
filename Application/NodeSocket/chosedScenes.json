@@ -1,72 +1,16 @@
 [
 	{
-		"id": "3-Suicidio",
-		"movie title": "L'attimo fuggente",
-		"emotions": "Tristezza",
-		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=3.mp4",
-		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=3.jpg"
+		"id": "4-Abbandono",
+		"movie title": "L'ottavo giorno",
+		"emotions": "Tenerezza",
+		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=4.mp4",
+		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=4.jpg"
 	},
 	{
-		"id": "9-Ospedale",
-		"movie title": "E.T.",
-		"emotions": "Tristezza",
-		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=9.mp4",
-		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=9.jpg"
-	},
-	{
-		"id": "13-Lettera",
-		"movie title": "La vita sognata degli angeli",
-		"emotions": "Tristezza",
-		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=13.mp4",
-		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=13.jpg"
-	},
-	{
-		"id": "19-Forni",
-		"movie title": " Schindler’s list",
-		"emotions": "Tristezza",
-		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=19.mp4",
-		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=19.jpg"
-	},
-	{
-		"id": "21-Pena di Morte",
-		"movie title": "Deadman walking-Condannato a Morte",
-		"emotions": "Tristezza",
-		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=21.mp4",
-		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=21.jpg"
-	},
-	{
-		"id": "36-Lettera",
-		"movie title": " La città degli angeli",
-		"emotions": "Tristezza",
-		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=36.mp4",
-		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=36.jpg"
-	},
-	{
-		"id": "43-Accerchiamento",
-		"movie title": "Un mondo perfetto",
-		"emotions": "Tristezza",
-		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=43.mp4",
-		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=43.jpg"
-	},
-	{
-		"id": "62-Opera",
-		"movie title": "Philadelphia",
-		"emotions": "Tristezza",
-		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=62.mp4",
-		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=62.jpg"
-	},
-	{
-		"id": "52-Notizia Morte",
-		"movie title": "Pensieri pericolosi",
-		"emotions": "Tristezza",
-		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=52.mp4",
-		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=52.jpg"
-	},
-	{
-		"id": "54-Morte Padre",
-		"movie title": "La vita è  bella",
-		"emotions": "Tristezza",
-		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=54.mp4",
-		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=54.jpg"
+		"id": "35-Bagno",
+		"movie title": "Trainspotting",
+		"emotions": "Disgusto",
+		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=35.mp4",
+		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=35.jpg"
 	}
 ]

@@ -29,22 +29,12 @@ height: 20vh;
 
 
 @media(max-width: 768px){
-.filters{
-    display: none;
-}
-
-#filter-toggle{ 
-    display: block !important;
-}
-
+    .filter-part .top-part{
+        max-height: 30vh;
+    }
 }
 @media(min-width: 768px){
-    .filters{
-        display: block !important;
-    }
-    #filter-toggle{  
-        display: none !important;
-    }
+
 }
 
 img{

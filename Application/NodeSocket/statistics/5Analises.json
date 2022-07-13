@@ -1,0 +1,18 @@
+[
+	{
+		"Scene": {
+			"id": "17-Feci",
+			"movie title": "Trainspotting",
+			"emotions": "Disgusto",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=17.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=17.jpg"
+		},
+		"Amusement": "1",
+		"Anger": "1",
+		"Sadness": "3",
+		"Tenderness": "2",
+		"Fear": "1",
+		"Disgust": "5",
+		"Neutrality": "1"
+	}
+]
