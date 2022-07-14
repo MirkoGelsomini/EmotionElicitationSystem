@@ -1,0 +1,34 @@
+[
+	{
+		"Scene": {
+			"id": "22-Autopsia",
+			"movie title": "Il silenzio degli innocenti",
+			"emotions": "Disgusto",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=22.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=22.jpg"
+		},
+		"Amusement": "1",
+		"Anger": "1",
+		"Sadness": "1",
+		"Tenderness": "1",
+		"Fear": "3",
+		"Disgust": "5",
+		"Neutrality": "2"
+	},
+	{
+		"Scene": {
+			"id": "23-Figuraccia",
+			"movie title": "Un pesce di nome Wanda",
+			"emotions": "Divertimento",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=23.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=23.jpg"
+		},
+		"Amusement": "1",
+		"Anger": "1",
+		"Sadness": "1",
+		"Tenderness": "1",
+		"Fear": "1",
+		"Disgust": "1",
+		"Neutrality": "1"
+	}
+]

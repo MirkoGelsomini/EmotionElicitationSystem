@@ -87,7 +87,7 @@ function addCard(jsonObject, numberOfCard) {
     }
     cardsHtml.push("</div></div>");
     cardsHtml.push("<div class=\"img_wrapper\" style=\"position:relative; padding-bottom:56.25%;\">")
-    cardsHtml.push("<img style=\"pointer-events: none;\" src=\"" + jsonObject["URLimage"] + "\" frameborder=\"0\" width=\"100%\" height=\"100%\" id=\"img" + numberOfCard + "\"></img>");
+    cardsHtml.push("<img style=\"pointer-events: none;\" src=\"" + jsonObject["URLimage"] + "\" frameborder=\"0\" width=\"100%\" height=\"100%\" id=\"img" + numberOfCard + "\" loading=\"lazy\"></img>");
     cardsHtml.push("</div></div></div></div></div>");
 }
 
