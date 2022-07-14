@@ -133,4 +133,4 @@ dist
 .DS_Store
 
 #Analyses
-./Application/NodeSocket/statistics/*
+./Application/NodeSocket/statistics/*.json
