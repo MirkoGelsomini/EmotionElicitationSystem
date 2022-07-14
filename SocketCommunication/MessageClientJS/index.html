@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+    <title>websocket client</title>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+
+    <br />
+    <br />
+    <button type="button" id="reqsub_button">Request to subscribe to the topic:</button><input type="text"
+        id="reqsub_topic" placeholder="topic to subscribe to" />
+    <br />
+    <br />
+    Message: <textarea id="pub_content"></textarea><br />
+    Topic: <input type="text" id="pub_topic" placeholder="topic" /><br />
+    <button type="button" id="pub_button">Send</button>
+    <button type="button" id="pubx1000_button">Send 1000 times</button>
+
+    <br />
+    <br />
+    <pre id="incoming"></pre>
+
+
+    <script type="text/javascript" src="sockets.js"></script>
+</body>
+
+</html>

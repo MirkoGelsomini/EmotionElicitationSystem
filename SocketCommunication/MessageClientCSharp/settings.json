@@ -1,0 +1,19 @@
+{
+  "logger": true,
+  "broker": {
+    "secure": false,
+    "address": "0.0.0.0",
+    "port": "50000",
+    "context": "VCOCKPIT",
+    "checkAuthorized": 3000
+  },
+  "client": {
+    "secure": false,
+    "localAddress": "127.0.0.1",
+    "remoteEthAddress": "",
+    "remoteWiFiAddress": "192.168.0.2",
+    "port": "50000",
+    "context": "VCOCKPIT",
+    "reconnect": 3000
+  }
+}

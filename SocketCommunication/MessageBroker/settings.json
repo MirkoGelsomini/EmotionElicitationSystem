@@ -1,0 +1,7 @@
+{  
+  "secure": false,
+  "host": "0.0.0.0",
+  "port": "50000",
+  "context": "VCOCKPIT",
+  "checkAuthorized": 3000  
+}

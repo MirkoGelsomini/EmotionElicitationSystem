@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject></StartupObject>
+    <AssemblyName>VCBitalinoLibraryTest</AssemblyName>
+    <RootNamespace>VCockpit.BitalinoLibrary</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="deps\BITalino_x64.dll" />
+    <None Remove="deps\BITalino_x64.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VCBitalinoLibrary\VCBitalinoLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BITalino_x64">
+      <HintPath>deps\BITalino_x64.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="deps\BITalino_x64.dll" />
+    <Resource Include="deps\BITalino_x64.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
