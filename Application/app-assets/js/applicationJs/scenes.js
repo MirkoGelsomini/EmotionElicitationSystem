@@ -18,6 +18,10 @@ const formArray = [selectByTitle, selectByEmotion];
 var idsHtmlSelected = [];
 
 //----Start WebSocketPart----
+
+/**
+ * read WebSocket.js for code documentation
+ */
 const ws = new WebSocket("ws://localhost:7075");
 ws.addEventListener("open", () => {
     console.log("connected");
@@ -38,12 +42,30 @@ ws.addEventListener("message", (data) => {
     }
 })
 
-
+/**
+ * Send message to socket 
+ * to load all scenes
+ */
 function loadScenes() {
     messageCodeExpected = 1;
     ws.send("1)");
 }
 
+/**
+ * Send a message to socket
+ * to save the chosed playlist
+ * scenes 
+ */
+function saveChosenScenes() {
+    messageCodeExpected = 3;
+    ws.send("3)" + JSON.stringify(chosenScenes));
+}
+
+//----End WebSocketPart----
+/**
+ * Create sets of movie title and emotion
+ * and then create the starting filtering options
+ */
 function loadStartingOption() {
     allScenes.forEach(element => {
         movieTitleSet.add(element["movie title"].trim());
@@ -56,6 +78,33 @@ function loadStartingOption() {
     createOptionsFromSet(emotionSet, selectByEmotion);
 }
 
+/**
+ * Create a list of options from the set and inner them in
+ * the given document element
+ * @param {Set of options' value} set 
+ * @param {The document element to inner html} documentElement 
+ * @returns options created
+ */
+function createOptionsFromSet(set, documentElement) {
+    var options = []
+    set.forEach((element) => {
+        var opt = document.createElement('option');
+        opt.value = element;
+        opt.innerHTML = element;
+        documentElement.appendChild(opt);
+        options.push(opt);
+    });
+    $(".select option").each(function () {
+        $(this).siblings('[value="' + element + '"]').remove();
+    });
+    return options
+}
+
+/**
+ * Create a cart for each filtered Scenes,
+ * if they exist, else it create the cards
+ * for all scenes and innered in the html code
+ */
 function addFilteredCards() {
     cardsHtml = [];
     counter = 0;
@@ -71,6 +120,15 @@ function addFilteredCards() {
     cardsListScenes.innerHTML = cardsHtml.join("");
 }
 
+
+/**
+ * Create a card with the id, title and emotion, 
+ * of the given json scene and push the html code for the card
+ * in the global array
+ * 
+ * @param {scene of the card} jsonObject 
+ * @param {the number of the card} numberOfCard 
+ */
 function addCard(jsonObject, numberOfCard) {
     cardsHtml.push("<div class=\"col-xl-4 col-md-6 col-12 text-center\">");
     cardsHtml.push("<div class=\"card\"  id=\"card" + numberOfCard + "\">");
@@ -91,60 +149,50 @@ function addCard(jsonObject, numberOfCard) {
     cardsHtml.push("</div></div></div></div></div>");
 }
 
-function createOptionsFromJson(array, valueJson, documentElement) {
-    var options = []
-    array.forEach(element => {
-        var opt = document.createElement('option');
-        opt.value = element[valueJson];
-        opt.innerHTML = element[valueJson];
-        documentElement.appendChild(opt)
-        options.push(opt);
-    });
-    return options
-}
-
-function createOptionsFromSet(set, documentElement) {
-    var options = []
-    set.forEach((element) => {
-        var opt = document.createElement('option');
-        opt.value = element;
-        opt.innerHTML = element;
-        documentElement.appendChild(opt);
-        options.push(opt);
-    });
-    $(".select option").each(function () {
-        $(this).siblings('[value="' + element + '"]').remove();
-    });
-    return options
-}
-
-function removeDuplicatedOption(documentElement) {
+/**
+ * Find and delete all duplicated options from selection element
+ * @param {The selection to check} selectionElement 
+ */
+function removeDuplicatedOption(selectionElement) {
     const optionsValue = [];
-    const titlesHtmlSelected = Array.from(documentElement.options);
+    const titlesHtmlSelected = Array.from(selectionElement.options);
     titlesHtmlSelected.forEach((e) => {
         if (!optionsValue.includes(e.value)) {
             optionsValue.push(e.value);
         } else {
-            documentElement.removeChild(e);
+            selectionElement.removeChild(e);
         }
     })
 }
-
-function removeAllDuplicatesFromSelects(documentArray) {
-    documentArray.forEach((e) => removeDuplicatedOption(e));
+/**
+ * Delete all duplicates from all selection
+ * @param {Array of selection to check} selectionArray 
+ */
+function removeAllDuplicatesFromSelects(selectionArray) {
+    selectionArray.forEach((e) => removeDuplicatedOption(e));
 }
 
-function deleteNotSelectedChildren(documentElement) {
-    $(documentElement).find('option').not(':selected').remove();
+/**
+ * Remove all not selected option from the given selection
+ * @param {Selection Element to check} selectionElement 
+ */
+function deleteNotSelectedChildren(selectionElement) {
+    $(selectionElement).find('option').not(':selected').remove();
 }
+
+/**
+ * Delete all children from the given document element
+ * @param {Document element delete children} documentElement 
+ */
 function deleteAllChildren(documentElement) {
     while (documentElement.firstChild) {
         documentElement.remove(documentElement.lastChild);
     }
 }
 
-
-
+/**
+ * Change titles options based on the other filter selection
+ */
 function changeTitlesOption() {
     deleteNotSelectedChildren(selectByTitle);
     var titleSet = new Set();
@@ -162,6 +210,9 @@ function changeTitlesOption() {
     }
 }
 
+/**
+ * Change emotions options based on the other filter selection
+ */
 function changeEmotionsOption() {
     deleteNotSelectedChildren(selectByEmotion);
     var emoSet = new Set();
@@ -181,6 +232,9 @@ function changeEmotionsOption() {
     }
 }
 
+/**
+ * Count how many cards have been selected
+ */
 function countScenesAvailable() {
     const idsHtmlSelected = Array.from(document.querySelectorAll('#select-by-id option:checked'));
     const titlesHtmlSelected = Array.from(document.querySelectorAll('#select-by-title option:checked'));
@@ -219,16 +273,82 @@ function countScenesAvailable() {
     addFilteredCards();
 }
 
-function saveChosenScenes() {
-    messageCodeExpected = 3;
-    ws.send("3)" + JSON.stringify(chosenScenes));
+/**
+ * Add the given card's id scene
+ * to the playlist.
+ * If the scene is already added the
+ * function will remove it
+ * @param {card's id to add} id 
+ */
+function addScene(id) {
+    let index = id.split("-")[1];
+    let btn = document.getElementById(id)
+    let classList = btn.classList;
+    if (classList.contains("addBtn")) {
+        let scene;
+        if (filteredScenes.length != 0) {
+            scene = filteredScenes[index];
+        } else {
+            scene = allScenes[index];
+        }
+        chosenScenes.push(scene);
+        btn.classList.add("removeBtn");
+        btn.classList.add("btn-danger");
+        btn.classList.remove("addBtn");
+        btn.classList.remove("btn-primary");
+    } else {
+        removeScene(id);
+    }
+    refreshPlayList();
 }
 
+/**
+ * Remove the given card's id scene
+ * to the playlist
+ * @param {card's id to remove} id 
+ */
+function removeScene(id) {
+    let index = id.split("-")[1];
+    let btn = document.getElementById(id);
+    let classList = btn.classList;
+    let selectedScene;
+    if (classList.contains("removeBtn")) {
+        if (filteredScenes.length != 0) {
+            selectedScene = filteredScenes[index];
+        } else {
+            selectedScene = allScenes[index];
+        }
+        chosenScenes = chosenScenes.filter(scene => scene["id"] !== selectedScene["id"]);
+        btn.classList.add("addBtn");
+        btn.classList.add("btn-primary");
+        btn.classList.remove("removeBtn");
+        btn.classList.remove("btn-danger");
+    }
+}
+
+/**
+ * Refresh the playlist two show the latest
+ * scenes added or removed
+ */
+function refreshPlayList(){
+    if(chosenScenes.length == 0){
+        playlist.innerHTML = "Playlist vuota";
+    }else{
+        let scenes = [];
+        chosenScenes.forEach(s=>scenes.push("id: "+s["id"]+"| titolo: "+s["movie title"]));
+        playlist.innerHTML = scenes.join("<br/>");
+    }
+}
+
+/**
+ * Change the html page to the videoplayer
+ * page
+ */
 function changeWindowToPlayer() {
     window.location.href = "Player.html";
 }
 
-
+//--Start event listener--
 selectByTitle.onchange = () => {
     countScenesAvailable();
     changeEmotionsOption();
@@ -266,54 +386,5 @@ clearFilterButton.onclick = () =>{
     createOptionsFromSet(emotionSet, selectByEmotion);
     countScenesAvailable();
 }
+//--End event listener--
 
-function addScene(id) {
-    let index = id.split("-")[1];
-    let btn = document.getElementById(id)
-    let classList = btn.classList;
-    if (classList.contains("addBtn")) {
-        let scene;
-        if (filteredScenes.length != 0) {
-            scene = filteredScenes[index];
-        } else {
-            scene = allScenes[index];
-        }
-        chosenScenes.push(scene);
-        btn.classList.add("removeBtn");
-        btn.classList.add("btn-danger");
-        btn.classList.remove("addBtn");
-        btn.classList.remove("btn-primary");
-    } else {
-        removeScene(id);
-    }
-    refreshPlayList();
-}
-
-function removeScene(id) {
-    let index = id.split("-")[1];
-    let btn = document.getElementById(id);
-    let classList = btn.classList;
-    let selectedScene;
-    if (classList.contains("removeBtn")) {
-        if (filteredScenes.length != 0) {
-            selectedScene = filteredScenes[index];
-        } else {
-            selectedScene = allScenes[index];
-        }
-        chosenScenes = chosenScenes.filter(scene => scene["id"] !== selectedScene["id"]);
-        btn.classList.add("addBtn");
-        btn.classList.add("btn-primary");
-        btn.classList.remove("removeBtn");
-        btn.classList.remove("btn-danger");
-    }
-}
-
-function refreshPlayList(){
-    if(chosenScenes.length == 0){
-        playlist.innerHTML = "Playlist vuota";
-    }else{
-        let scenes = [];
-        chosenScenes.forEach(s=>scenes.push("id: "+s["id"]+" titolo: "+s["movie title"]));
-        playlist.innerHTML = scenes.join("<br/>");
-    }
-}

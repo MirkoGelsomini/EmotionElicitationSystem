@@ -14,7 +14,7 @@ const emotions = ["Amusement","Anger","Sadness","Tenderness","Fear","Disgust","N
 const videoPlaystDiv = document.getElementById("playlist");
 const sceneTitle = document.getElementById("scene-title");
 
-//----WebSocketPart----
+//-- Start WebSocketPart --
 const ws = new WebSocket("ws://localhost:7075");
 ws.addEventListener("open", ()=>{
     console.log("connected");
@@ -22,6 +22,9 @@ ws.addEventListener("open", ()=>{
     ws.send("2)")
 })
 
+/**
+ * read WebSocket.js for code documentation
+ */
 ws.addEventListener("message",(data)=>{
     switch(messageCodeExpected){
         case 2:
@@ -39,22 +42,44 @@ ws.addEventListener("message",(data)=>{
     }     
 })
 
+/**
+ * Send a message to the websocket 
+ * to save the passend result json
+ */
+function save(){
+    messageCodeExpected = 4;
+    ws.send("4)"+JSON.stringify(statistics));
+}
+//-- End WebSocketPart --
 
+/**
+ * Start the playlist
+ */
 function startAnalyzing(){
     nextTrack();
 }
+
+/**
+ * End the playlist reproduction
+ * and open the operator page
+ */
 function endAnalyzing(){
     window.location.href="OperatorPage.html";
 }
 
-
+/**
+ * Show the questions modal
+ */
 function askQuestion(){  
     passedScene = currentScene;
     emotions.forEach((e)=>$('#'+e+' input:radio').prop('checked',false));
     questionModal.show();  
 }
 
-
+/**
+ * Poll the next/first video's url track
+ * and shows it.
+ */
 function nextTrack(){
     currentScene = playlist.shift();
     if(currentScene.URL){
@@ -71,15 +96,20 @@ function nextTrack(){
     }
 }
 
+/**
+ * Show the thanks and save modal
+ */
 function thanks(){
     thanksModal.show();
 }
 
-function save(){
-    messageCodeExpected = 4;
-    ws.send("4)"+JSON.stringify(statistics));
-}
-
+/**
+ * Check if the question of given emotion 
+ * is answered, if not the question color change
+ * to red.
+ * @param {emotion to check} emotion 
+ * @returns 
+ */
 function validateAnswer(emotion){
     let answer = $('#'+emotion+' input:radio:checked').val();
         if(answer != undefined){
@@ -90,6 +120,7 @@ function validateAnswer(emotion){
         }
 }
 
+//--Start listener--
 saveBtn.onclick = function(){
     save();
     thanksModal.hide();
@@ -118,5 +149,5 @@ confirmBtn.onclick = function(){
         }
     }
 }
-
+//--Ends listener--
 
