@@ -112,7 +112,7 @@ namespace MessageBroker
             if (secure) protocol = "wss";
 
             var prf = new ProcessFinder();
-            prf.KillByPort(Convert.ToInt32(port));
+            //prf.KillByPort(Convert.ToInt32(port));
 
             WebSocket_server = new WebSocketServer(protocol + "://" + host + ":" + port + "/" + context);
             
