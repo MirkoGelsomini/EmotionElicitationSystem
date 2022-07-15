@@ -97,7 +97,7 @@ function nextTrack() {
             videoPlaystDiv.innerHTML = "Nulla in coda";
         }
     } else {
-        thanks();
+        console.log("playlist terminata")
     }
 }
 
@@ -131,6 +131,7 @@ saveBtn.onclick = function () {
     save();
     thanksModal.hide();
 }
+
 function confirm(){
     let questionsAnswer = [];
 

@@ -82,6 +82,9 @@ bigPlayButton.addEventListener('click',()=>togglePlayPause());
 //--Start Skip Track--
 skipTrack.addEventListener('click',()=>{
     nextTrack();
+    if (playlist.length == 0 && currentScene == undefined) {
+        thanks();
+    }
 })
 //--Start Skip Track--
 

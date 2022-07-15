@@ -5,5 +5,12 @@
 		"emotions": "Divertimento",
 		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=1.mp4",
 		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=1.jpg"
+	},
+	{
+		"id": "2-Balcone",
+		"movie title": "Schindler’s list",
+		"emotions": "Rabbia",
+		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=2.mp4",
+		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=2.jpg"
 	}
 ]
