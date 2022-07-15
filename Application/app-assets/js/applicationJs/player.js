@@ -1,16 +1,19 @@
 const myVideo = document.getElementById('video_1');
-const videoContainer = document.getElementById('video-container')
+const videoContainer = document.getElementById('video-container');
+const coverOverlay = document.querySelector('.overlays');
 
-const bar = document.querySelector('.bar')
+const bar = document.querySelector('.bar');
 const barContent = document.querySelector('.bar-content');
 
 const playBtn = document.getElementById('play-pause');
-
+const bigPlayButton = document.querySelector('.big-play-button');
 
 const volumeBtn = document.getElementById('mute-unmute');
 const volume = document.querySelector('.volume');
 var volumeBeforeChange = volume.value;
 var boolMuted = false;
+
+const skipTrack =document.querySelector('.next-track');
 
 const currentTimeElement = document.querySelector('.current');
 const durationTimeElement = document.querySelector('.duration');
@@ -42,10 +45,14 @@ playBtn.onclick = function(){
 
 myVideo.addEventListener('play', ()=>{
     playBtn.className = "pause";
+    videoContainer.classList.add("hover");
+    coverOverlay.style.zIndex = -1;
 })
 
 myVideo.addEventListener('pause', ()=>{
     playBtn.className = "play";
+    videoContainer.classList.remove("hover");
+    coverOverlay.style.zIndex = 2;
 })
 
 myVideo.addEventListener('click',()=>togglePlayPause());
@@ -57,8 +64,17 @@ myVideo.addEventListener('ended',()=>{
     askQuestion();
     nextTrack();
 })
+
+bigPlayButton.addEventListener('click',()=>togglePlayPause());
 //--End video listener--
 //--End Play/Pause--
+
+//--Start Skip Track--
+skipTrack.addEventListener('click',()=>{
+    nextTrack();
+})
+//--Start Skip Track--
+
 
 //--Start Progress Bar--
 

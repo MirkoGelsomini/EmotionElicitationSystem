@@ -130,14 +130,14 @@ function addFilteredCards() {
  * @param {the number of the card} numberOfCard 
  */
 function addCard(jsonObject, numberOfCard) {
-    cardsHtml.push("<div class=\"col-xl-4 col-md-6 col-12 text-center\">");
+    cardsHtml.push("<div class=\"col-xl-6 col-md-6 col-12\">");
     cardsHtml.push("<div class=\"card\"  id=\"card" + numberOfCard + "\">");
     cardsHtml.push("<div class=\"card-body\">");
     cardsHtml.push("<div class=\"row\">");
-    cardsHtml.push("<div class=\"col-xl-8 col-md-8 col-8 text-center\">")
-    cardsHtml.push("<div class=\"card-title float-start\" style=\"font-size:15px;\">" + jsonObject["id"] + "<br />" + jsonObject["movie title"] + "</div></div>");
-    cardsHtml.push("<div class=\"col-xl-4 col-md-4 col-4 text-center justify-content-center\">");
-
+    cardsHtml.push("<div class=\"col-xl-10 col-md-10 col-10 d-flex align-items-center justify-content-start\">")
+    cardsHtml.push("<div class=\" float-start\" style=\"font-size:20px;\">")
+    cardsHtml.push("<span style=\"font-weight:900;\">"+jsonObject["movie title"]+"</span><span style=\"font-size:16px;\"> ("+ jsonObject["id"].split('-')[1]+ ")</span></div></div>");
+    cardsHtml.push("<div class=\"col-xl-2 col-md-2 col-2 d-flex align-items-center justify-content-end\" style=\"height:50px;\"> ");
     if(!chosenScenes.includes(jsonObject)){
         cardsHtml.push("<button class=\"btn btn-primary scenesBtn addBtn\" id=\"add-" + numberOfCard + "-button\" onClick=\"addScene(this.id)\"></button>");
     }else{
@@ -292,7 +292,7 @@ function addScene(id) {
             scene = allScenes[index];
         }
         chosenScenes.push(scene);
-        btn.classList.add("removeBtn");
+        btn.classList.add("removeScene");
         btn.classList.add("btn-danger");
         btn.classList.remove("addBtn");
         btn.classList.remove("btn-primary");
@@ -312,7 +312,7 @@ function removeScene(id) {
     let btn = document.getElementById(id);
     let classList = btn.classList;
     let selectedScene;
-    if (classList.contains("removeBtn")) {
+    if (classList.contains("removeScene")) {
         if (filteredScenes.length != 0) {
             selectedScene = filteredScenes[index];
         } else {
@@ -321,7 +321,7 @@ function removeScene(id) {
         chosenScenes = chosenScenes.filter(scene => scene["id"] !== selectedScene["id"]);
         btn.classList.add("addBtn");
         btn.classList.add("btn-primary");
-        btn.classList.remove("removeBtn");
+        btn.classList.remove("removeScene");
         btn.classList.remove("btn-danger");
     }
 }
@@ -335,7 +335,7 @@ function refreshPlayList(){
         playlist.innerHTML = "Playlist vuota";
     }else{
         let scenes = [];
-        chosenScenes.forEach(s=>scenes.push("id: "+s["id"]+"| titolo: "+s["movie title"]));
+        chosenScenes.forEach(s=>scenes.push("<span>"+s["movie title"]+"</span><span> ("+ s["id"].split('-')[1]+ ")</span>"));
         playlist.innerHTML = scenes.join("<br/>");
     }
 }

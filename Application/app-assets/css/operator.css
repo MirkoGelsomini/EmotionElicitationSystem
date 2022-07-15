@@ -55,6 +55,10 @@ height: 100%;
 .scenesBtn.addBtn::before{
     content: '\f067';
 }
+.scenesBtn.removeScene::before{
+    content: '\f068';
+}
+
 .removeBtn::before{
     content: '\f2ed';
 }

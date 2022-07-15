@@ -15,12 +15,45 @@
 
 .video{
     width:100%;
+    display: block;
+    position: relative;
+}
+
+.overlays{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.big-play-button::before{
+    position: relative;
+    content: '\f144';
+    font-family: 'Font Awesome 5 Free';
+    top: 40%;
+    font-size: 5vw;
+    font-weight: 900;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.next-track::before{
+    content: '\f04e';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
 }
 
 .c-video.hover:hover .controls{
     transform: translateY(0);
     transition: all 0.2s;
 }
+
 
 .controls{
     position: absolute;
@@ -40,13 +73,12 @@
 }
 
 
-
 .buttons #play-pause:before{
     content: '\f144';
     font-family: 'Font Awesome 5 Free';
     width: auto;
     height: auto;
-    font-size: 1vw;
+    font-size: 2vh;
     font-weight: 900;
     color: #fff;
     -webkit-font-smoothing: antialiased;
@@ -65,7 +97,7 @@
     font-family: 'Font Awesome 5 Free';
     width: auto;
     height: auto;
-    font-size: 1vw;
+    font-size: 2vh;
     font-weight: 900;
     color: #fff;
     -webkit-font-smoothing: antialiased;
@@ -81,7 +113,7 @@
 
 
 .buttons button:hover{
-    background-color: rgba(18, 189, 223, 0.5);
+    background-color: rgb(115, 101, 225);
 }
 
 .bar{
@@ -103,24 +135,35 @@
 }
 
 .volume{
+    -webkit-appearance: none;
     appearance: none;
-    background: rgba(190, 94, 94, 0.6);
+    background: rgba(176, 140, 215, 0.423);
     border-radius: 5px;
     width: 100%;
-    height: 1vw;
+    height: 1.5vh;
     margin: 2px;  
     align-items: center;
     justify-content: center;
     bottom: 0;
 }
 
+.volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.5vh;
+    height: 1.5vh;
+    background: #45239b;
+    border-radius:50px;
+    cursor: pointer;
+  }
+
 .time{
     justify-content: center;
-    font-size: 1vw;
+    font-size: 2vh;
     grid-area: "time";
     color: white;
     width: 100%;
-    height: 20px;
+    height: 1%;
     font-family: 'Font Awesome 5 Free';
     align-items: center;
 }
@@ -139,7 +182,7 @@
     font-family: 'Font Awesome 5 Free';
     width: auto;
     height: auto;
-    font-size: 1vw;
+    font-size: 2vh;
     font-weight: 900;
     color: #fff;
     -webkit-font-smoothing: antialiased;
@@ -171,3 +214,6 @@
     margin-top: 20px;
 }
 
+input[type=radio]{
+    transform:scale(1.2);
+}
