@@ -217,3 +217,7 @@
 input[type=radio]{
     transform:scale(1.2);
 }
+
+.hide{
+    display: none;
+}

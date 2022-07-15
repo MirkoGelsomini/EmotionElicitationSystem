@@ -43,6 +43,16 @@ playBtn.onclick = function(){
     togglePlayPause();
 };
 
+myVideo.addEventListener('canplaythrough',()=>{
+    bigPlayButton.classList.remove("hide");
+    document.querySelector('.spinner-border').classList.add("hide");
+})
+
+myVideo.addEventListener('loadstart',()=>{
+    bigPlayButton.classList.add("hide");
+    document.querySelector('.spinner-border').classList.remove("hide");
+})
+
 myVideo.addEventListener('play', ()=>{
     playBtn.className = "pause";
     videoContainer.classList.add("hover");
