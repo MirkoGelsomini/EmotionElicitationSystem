@@ -1,8 +1,12 @@
+
 var playlist = [];
 var statistics = [];
 var currentScene;
 var passedScene;
 var messageCodeExpected = 0;
+var firstPlaylistVideo = true;
+
+const sessionIdentifier = uuidv4();
 
 const saveBtn = document.getElementById('save-button');
 const questionModal = new bootstrap.Modal(document.getElementById("Questions"), {});
@@ -12,6 +16,7 @@ const questionRadios= document.getElementById("questions-radio");
 const emotions = ["Amusement", "Anger", "Sadness", "Tenderness", "Fear", "Disgust", "Neutrality"];
 const videoPlaystDiv = document.getElementById("playlist");
 const sceneTitle = document.getElementById("scene-title");
+
 
 //-- Start WebSocketPart --
 const ws = new WebSocket("ws://localhost:7075");
@@ -59,7 +64,8 @@ function save() {
 /**
  * Start the playlist
  */
-function startAnalyzing() {
+function startAnalyzing(){
+    statistics.push({"sessionID":sessionIdentifier});
     nextTrack();
 }
 
@@ -86,6 +92,14 @@ function askQuestion() {
  * and shows it.
  */
 function nextTrack() {
+    firstVideoPlay  = true;
+    bitalinoReady = false;
+    document.getElementById("bitalino-ready").classList.add("form-check-danger");
+    document.getElementById("bitalino-ready").classList.remove("form-check-success");
+    document.getElementById("label-bitalino-ready").innerHTML = "Bitalino non pronto";
+    waitForWsmCreation();
+    
+
     currentScene = playlist.shift();
     if (typeof currentScene !== "undefined" && currentScene.URL) {
         myVideo.src = currentScene.URL;
@@ -106,6 +120,7 @@ function nextTrack() {
  */
 function thanks() {
     thanksModal.show();
+    wsm.Publish("Bitalino: FinishSampling", "Finish");
 }
 
 /**
@@ -151,6 +166,8 @@ function confirm(){
         statistics.push(dict);
         console.log(statistics);
         questionModal.hide();
+        wsm.Publish("Bitalino: SaveSampling", sessionIdentifier+"_"+passedScene["id"]);
+        wsm.Publish("Bitalino: NewSampling", "New Video");
         if (playlist.length == 0 && currentScene == undefined) {
             thanks();
         }
@@ -239,3 +256,20 @@ function createRandomizedQuestion() {
 
 //--End Randomize Question--
 
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
+function waitForWsmCreation(){
+    if(typeof window.wsm !== "undefined"){
+        wsm.Publish("Bitalino: StateUpdateRequest", "Requesting state");
+        wsm.Publish("Bitalino: NewSampling", "New Video");
+        return;
+    }
+    else{
+        setTimeout(waitForWsmCreation, 250);
+    }
+}

@@ -25,7 +25,6 @@ namespace MessageClient
         static void Main(string[] args)
         {
             Init();
-
             Wait();
         }
 
@@ -55,21 +54,46 @@ namespace MessageClient
             Console.WriteLine("Message received-> topic: " + topic + ", content: " + content);
             #endif
 
-            if (topic == "TopicName")
-            {               
-
-                
-            }         
-
+            if (topic == "Bitalino: StateUpdateRequest"){               
+                mc.Publish("Bitalino: StateUpdateAnswer","OK");
+            }else if(topic == "Bitalino: StartSampling"){
+               Console.WriteLine("Bitalino: StartSampling Start Sampling");
+                //mc.Publish("Bitalino: StartSampling", "Start Sampling");
+            }else if(topic == "Bitalino: RestartSampling"){
+                Console.WriteLine("Bitalino: RestartSampling Restarting Sampling");
+                //mc.Publish("Bitalino: RestartSampling", "Restarting Sampling");
+            }else if(topic == "Bitalino: StopSampling"){
+                Console.WriteLine("Bitalino: StopSampling Stop Sampling");
+                //mc.Publish("Bitalino: StopSampling", "Stop Sampling");
+            }else if(topic == "Bitalino: FinishSampling"){
+                Console.WriteLine("Bitalino: FinishSampling Finishing Sampling");
+                //mc.Publish("Bitalino: FinishSampling", "Finishing Sampling");
+            }else if(topic == "Bitalino: NewSampling"){
+                Console.WriteLine("Bitalino: NewSampling Starting new Sampling");
+                //mc.Publish("Bitalino: NewSampling", "Starting new Sampling");
+            }else if(topic == "Bitalino: SaveSampling"){
+                Console.WriteLine("Saving Sampling "+content);
+            }else if(topic == "Bitalino: DeleteSampling"){
+                Console.WriteLine("Deleting Sampling");
+            }else if(topic == "Bitalino: StateUpdateAnswer"){
+            }else{
+                Console.WriteLine("Error");
+            }      
         }
 
         private static void OnAuthorized(bool authorized)
         {
             Console.WriteLine("Authorized!!!");
 
-            mc.SubscribeTo("TopicName");
-
-            mc.Publish("TopicName", "Content");
+            mc.SubscribeTo("Bitalino: StartSampling");
+            mc.SubscribeTo("Bitalino: StopSampling");
+            mc.SubscribeTo("Bitalino: RestartSampling");
+            mc.SubscribeTo("Bitalino: NewSampling");
+            mc.SubscribeTo("Bitalino: FinishSampling");
+            mc.SubscribeTo("Bitalino: StateUpdateRequest");
+            mc.SubscribeTo("Bitalino: StateUpdateAnswer");
+            mc.SubscribeTo("Bitalino: SaveSampling");
+            mc.SubscribeTo("Bitalino: DeleteSampling");
 
         }
         

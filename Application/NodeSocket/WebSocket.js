@@ -42,11 +42,11 @@ wss.on('connection', (ws)=>{
                 break;
             case "4":
                 var jsValue = JSON.parse(splits[1]);
-                fs.open(path.resolve(__dirname, './statistics')+"/"+numberAnalysis+"Analises.json", 'w', function (err, file) {
+                fs.open(path.resolve(__dirname, './statistics')+"/"+jsValue[0]["sessionID"]+".json", 'w', function (err, file) {
                     if (err) throw err;
                     console.log('Saved!');
                   }); 
-                fs.writeFile(path.resolve(__dirname, './statistics')+"/"+numberAnalysis+"Analises.json",JSON.stringify(jsValue,null,'\t'),function (err) {
+                fs.writeFile(path.resolve(__dirname, './statistics')+"/"+jsValue[0]["sessionID"]+".json",JSON.stringify(jsValue,null,'\t'),function (err) {
                     if (err) throw err;
                     console.log('Saved!');
                 });

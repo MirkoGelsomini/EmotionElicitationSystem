@@ -13,7 +13,7 @@ const volume = document.querySelector('.volume');
 var volumeBeforeChange = volume.value;
 var boolMuted = false;
 
-const skipTrack =document.querySelector('.next-track');
+const skipTrack = document.querySelector('.next-track');
 
 const currentTimeElement = document.querySelector('.current');
 const durationTimeElement = document.querySelector('.duration');
@@ -21,6 +21,7 @@ const durationTimeElement = document.querySelector('.duration');
 const fullScreenBtn = document.getElementById('full-screen');
 var timeout;
 var isFullScreen = false;
+var firstVideoPlay = true;
 
 
 //--Start Play/Pause--
@@ -30,57 +31,72 @@ var isFullScreen = false;
  * of play/pause based on the video
  * current state
  */
-function togglePlayPause(){
-    if(myVideo.paused){
+function togglePlayPause() {
+    if (myVideo.paused) {
         myVideo.play();
-    }else{
+    } else {
         myVideo.pause();
     }
 }
 
 //--Start video listener--
-playBtn.onclick = function(){       
+playBtn.onclick = function () {
     togglePlayPause();
 };
 
-myVideo.addEventListener('canplaythrough',()=>{
+myVideo.addEventListener('canplaythrough', () => {
     bigPlayButton.classList.remove("hide");
     document.querySelector('.spinner-border').classList.add("hide");
 })
 
-myVideo.addEventListener('loadstart',()=>{
+myVideo.addEventListener('loadstart', () => {
     bigPlayButton.classList.add("hide");
     document.querySelector('.spinner-border').classList.remove("hide");
 })
 
-myVideo.addEventListener('play', ()=>{
+myVideo.addEventListener('play', () => {
     playBtn.className = "pause";
     videoContainer.classList.add("hover");
     coverOverlay.style.zIndex = -1;
+    if (firstVideoPlay) {
+        wsm.Publish("Bitalino: StartSampling", "Video start");
+    } else {
+        wsm.Publish("Bitalino: RestartSampling", "Video resume");
+    }
 })
 
-myVideo.addEventListener('pause', ()=>{
+myVideo.addEventListener('pause', () => {
+    wsm.Publish("Bitalino: StopSampling", "Video pause");
     playBtn.className = "play";
     videoContainer.classList.remove("hover");
     coverOverlay.style.zIndex = 2;
+    firstVideoPlay = false;
 })
 
-myVideo.addEventListener('click',()=>togglePlayPause());
+myVideo.addEventListener('click', () => togglePlayPause());
 
-myVideo.addEventListener('ended',()=>{
-    if(isFullScreen){
+myVideo.addEventListener('ended', () => {
+    if (isFullScreen) {
         fullScreenChange();
     }
     askQuestion();
     nextTrack();
 })
 
-bigPlayButton.addEventListener('click',()=>togglePlayPause());
+bigPlayButton.addEventListener('click', () => {
+    if (bitalinoReady) {
+        togglePlayPause();
+    } else {
+        alert("Bitalino non pronto");
+    }
+}
+);
 //--End video listener--
 //--End Play/Pause--
 
 //--Start Skip Track--
-skipTrack.addEventListener('click',()=>{
+skipTrack.addEventListener('click', () => {
+    wsm.Publish("Bitalino: DeleteSampling", "Deleting Sampling");
     nextTrack();
     if (playlist.length == 0 && currentScene == undefined) {
         thanks();
@@ -92,31 +108,31 @@ skipTrack.addEventListener('click',()=>{
 //--Start Progress Bar--
 
 //Progress Bar modification
-myVideo.addEventListener('timeupdate',function(){
+myVideo.addEventListener('timeupdate', function () {
     var barConPos = myVideo.currentTime / myVideo.duration;
     barContent.style.width = barConPos * 100 + "%";
-    if(VideoColorSpace.ended){
+    if (VideoColorSpace.ended) {
         playBtn.className = "play";
     }
 })
 
 
 //Change progress bar on  click
-bar.addEventListener('click',(e)=>{
-    const progressTime = (e.offsetX / bar.offsetWidth)*myVideo.duration;
+bar.addEventListener('click', (e) => {
+    const progressTime = (e.offsetX / bar.offsetWidth) * myVideo.duration;
     myVideo.currentTime = progressTime;
 })
 //--End Progress Bar--
 
 //--Start Volume Control--
 
-volume.addEventListener('mousemove',(e)=>{
+volume.addEventListener('mousemove', (e) => {
     myVideo.volume = e.target.value;
-    if(e.target.value == 0){
+    if (e.target.value == 0) {
         boolMuted = true;
         volumeBeforeChange = 0.5;
         volumeBtn.className = "muted";
-    }else{
+    } else {
         boolMuted = false;
         volumeBtn.className = "unmuted"
     }
@@ -129,13 +145,13 @@ volume.addEventListener('mousemove',(e)=>{
  * the volume level is set to the previous state,
  * if it exists, otherwise it will set at the middle
  */
-function toggleMuteUnmute(){
-    if(!boolMuted){
+function toggleMuteUnmute() {
+    if (!boolMuted) {
         myVideo.volume = 0;
         volumeBeforeChange = volume.value;
         volume.value = 0;
         volumeBtn.className = "muted";
-    }else{
+    } else {
         volumeBtn.className = "unmuted";
         myVideo.volume = volumeBeforeChange;
         volume.value = volumeBeforeChange;
@@ -143,7 +159,7 @@ function toggleMuteUnmute(){
     boolMuted = !boolMuted
 }
 
-volumeBtn.onclick = function(){
+volumeBtn.onclick = function () {
     toggleMuteUnmute();
 };
 //--End Volume Control--
@@ -154,18 +170,18 @@ volumeBtn.onclick = function(){
  * Control the change of the screen size for both
  * Firefox and Chrome, changing the class for css part
  */
-function fullScreenChange() { 
-    if(!isFullScreen){
+function fullScreenChange() {
+    if (!isFullScreen) {
         if (myVideo.mozRequestFullScreen) {
             videoContainer.mozRequestFullScreen();
             fullScreenBtn.classList = "reduce";
         } else if (myVideo.webkitRequestFullScreen) {
             videoContainer.webkitRequestFullScreen();
             fullScreenBtn.classList = "reduce";
-        }else{
+        } else {
             console.log("error fullScreen");
         }
-    }else{
+    } else {
         if (document.exitFullscreen) {
             document.exitFullscreen();
         } else if (document.webkitExitFullscreen) {
@@ -176,57 +192,57 @@ function fullScreenChange() {
             document.msExitFullscreen();
         }
         fullScreenBtn.classList = "full";
-    }  
-      
+    }
+
 }
 
 /**
  * css style for non-fullScreen video (mouse hover)
  */
- function setTransform(){
+function setTransform() {
     document.getElementById("controls").style.transform = " translateY(0)";
-    document.getElementById("controls").style.transition= " all 0.2s ";
+    document.getElementById("controls").style.transition = " all 0.2s ";
 }
 
 
 /**
  * css style for fullScreen video (mouse move)
  */
-function removeTransform(){
+function removeTransform() {
     document.getElementById("controls").style.removeProperty("transform")
-    document.getElementById("controls").style.removeProperty("transition"); 
+    document.getElementById("controls").style.removeProperty("transition");
 }
 
-videoContainer.onmousemove = function(){
-    if (isFullScreen){
+videoContainer.onmousemove = function () {
+    if (isFullScreen) {
         clearTimeout(timeout);
         setTransform();
-        timeout = setTimeout(()=>{removeTransform()},"1500");
+        timeout = setTimeout(() => { removeTransform() }, "1500");
     }
 }
 
 //-- Start FullScreen Listener--
-fullScreenBtn.onclick = function(){
+fullScreenBtn.onclick = function () {
     fullScreenChange();
 }
 
 
-videoContainer.onfullscreenchange = ()=>{
-    if(isFullScreen){
+videoContainer.onfullscreenchange = () => {
+    if (isFullScreen) {
         videoContainer.classList.add("hover")
         myVideo.classList.remove("video-fullscreen");
-    }else{
+    } else {
         videoContainer.classList.remove("hover")
         myVideo.classList.add("video-fullscreen");
     }
     isFullScreen = !isFullScreen
 };
 
-videoContainer.onwebkitfullscreenchange = ()=>{
-    if(isFullScreen){
+videoContainer.onwebkitfullscreenchange = () => {
+    if (isFullScreen) {
         videoContainer.classList.add("hover")
         myVideo.classList.remove("video-fullscreen");
-    }else{
+    } else {
         videoContainer.classList.remove("hover")
         myVideo.classList.add("video-fullscreen");
     }
@@ -242,11 +258,11 @@ videoContainer.onwebkitfullscreenchange = ()=>{
  * @param {time in sec to convert} time 
  * @returns second in HH:MM:mm format
  */
-function timeConverter(time){
+function timeConverter(time) {
     var hour = addZero(parseInt(time / 3600));
-    var minutes = addZero(parseInt((time % 3600)/60));
-    var second = addZero(parseInt((time % 3600)%60));
-    return hour+":"+minutes+":"+second;
+    var minutes = addZero(parseInt((time % 3600) / 60));
+    var second = addZero(parseInt((time % 3600) % 60));
+    return hour + ":" + minutes + ":" + second;
 }
 
 /**
@@ -257,11 +273,11 @@ function timeConverter(time){
  * @param {string in time to format} timeToAdd 
  * @returns formatted string
  */
-function addZero(timeToAdd){
+function addZero(timeToAdd) {
     var str = String(timeToAdd).length;
-    if(str === 1){   
-        return "0"+timeToAdd;
-    }else{
+    if (str === 1) {
+        return "0" + timeToAdd;
+    } else {
         return timeToAdd;
     }
 }
@@ -269,9 +285,9 @@ function addZero(timeToAdd){
 /**
  * Update the time on the screen
  */
-const currentTime= ()=>{
-   currentTimeElement.innerHTML = timeConverter(myVideo.currentTime);
-   durationTimeElement.innerHTML = timeConverter(myVideo.duration);
+const currentTime = () => {
+    currentTimeElement.innerHTML = timeConverter(myVideo.currentTime);
+    durationTimeElement.innerHTML = timeConverter(myVideo.duration);
 }
 
 myVideo.addEventListener('timeupdate', currentTime);
@@ -279,7 +295,5 @@ myVideo.addEventListener('timeupdate', currentTime);
 myVideo.addEventListener('loadedmetadata', currentTime);
 //--End time progress--
 
-
-
-
+window.onload = start;
 

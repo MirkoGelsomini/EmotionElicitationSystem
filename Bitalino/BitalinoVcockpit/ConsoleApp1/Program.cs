@@ -2,13 +2,27 @@
 using VCockpit.BitalinoLibrary;
 using VCockpit.BitalinoLibrary.util;
 using System.Threading;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace VC.BitalinoLibrary
 {
     class VCBitalinoLibraryTest
     {
+        //START MESSAGE CLIENT VARIABLES
+        static string ProjectName;
+        static MessageController mc;
+        static ManualResetEvent mre = new ManualResetEvent(false);
+        static int choice;
+        static bool messageReceived = false;
+        static bool startSampling = false;
+        static bool endSampling = false;
+
+        static String saveFileName = "";
+        //END MESSAGE CLIENT VARIABLES
         static void Main(string[] args)
         {
+            Init();
             VCBitalino bitalino = new VCBitalino();
             // NOTE: it could be more than one
             VCData bitalinoData = new VCData(100, 100); // frames, sampling rate
@@ -50,8 +64,29 @@ namespace VC.BitalinoLibrary
                  **/
                 // one for each device
                 VCSampler sampler_dev = VCSamplerInit(bitalino, dev, bitalinoData);
-                bitalino.StartDeviceSampling(dev, bitalinoData.samplingRate);
+                
+                while(!endSampling){
+                    if(startSampling){
+                        Sampling(bitalino,bitalinoData,sampler_dev,dev);
+                    }else{
+                        Thread.Sleep(50);
+                    }
+                }
 
+                bitalino.DisposeDevice(dev);
+            }
+            catch (Bitalino.Exception e)
+            {
+                Console.WriteLine("BITalino exception: {0}", e.Message);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine("BITalino exception: {0}", e.Message);
+            }
+        }
+
+        static void Sampling(VCBitalino bitalino,VCData bitalinoData ,VCSampler sampler_dev, Bitalino dev){
+                bitalino.StartDeviceSampling(dev, bitalinoData.samplingRate);
                 // start the thread
                 sampler_dev.SetStartState();
                 bitalinoData.timestamp = VCSampler.GetTimestampMilliseconds();
@@ -65,7 +100,7 @@ namespace VC.BitalinoLibrary
                 // Do while main control loop
                 while (sampler_dev.IsActive())
                 {
-                    if (!Console.KeyAvailable)
+                    if (!messageReceived)
                     {
                         Thread.Sleep(50);
                     }
@@ -73,8 +108,9 @@ namespace VC.BitalinoLibrary
                     {
                         try
                         {
-                            string userInput = Console.ReadLine();
-                            int choice = int.Parse(userInput);
+                            //string userInput = Console.ReadLine();
+                            //int choice = int.Parse(userInput);
+                            
                             long timestampAction = VCSampler.GetTimestampMilliseconds();
                             string log = timestampAction.ToString();
                             switch (choice)
@@ -97,9 +133,10 @@ namespace VC.BitalinoLibrary
                                     // sampling_log_actions.Add(log);
                                     sampler_dev.StopSampling();
                                     break;
-                                default:
+                                 default:
                                     break;
                             }
+                            messageReceived = false;
                         }
                         catch
                         {
@@ -110,17 +147,82 @@ namespace VC.BitalinoLibrary
                 Console.WriteLine("[main thread] sampling has finished");
                 sampler_dev.FinishSampling();
                 bitalino.StopDeviceSampling(dev);
-                sampler_dev.SaveResults(); // results saved in bin\x86\Release    
-                bitalino.DisposeDevice(dev);
+                if(!saveFileName.Equals("")){
+                    sampler_dev.SaveResults(); //results saved in bin\x86\Release    
+                }else{
+                    sampler_dev.ClearSamples();
+                }
+        }
+
+        static void Init()
+        {
+            //init methods
+            ProjectName = System.Reflection.Assembly.GetEntryAssembly().GetName().Name;
+            Console.WriteLine("Starting Module " + ProjectName + "...");
+            System.AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionTrapper;
+
+            mc = new MessageController();   //send configuration    
+
+            Console.WriteLine("Module " + ProjectName + " ready.");
+            Console.WriteLine("----------------------------------------------------------------------");
+
+            //init setup
+            mc.Setup(ProjectName, false); //send ModuleName, unique
+            mc.OnMessage += OnMessage;
+            mc.OnAuthorized += OnAuthorized;
+            mc.Connect();
+
+        }
+
+        private static void OnMessage(String topic, String content)
+        {
+            #if DEBUG
+            Console.WriteLine("Message received-> topic: " + topic + ", content: " + content);
+            #endif
+
+            if (topic == "Bitalino: StateUpdateRequest"){
+                //we need a if control with the bitalino state
+                mc.Publish("Bitalino: StateUpdateAnswer", "OK");
+            }else if(topic == "Bitalino: RestartSampling"){
+                choice = 0;
+            }else if(topic == "Bitalino: StopSampling"){
+                choice = 1;
+            }else if(topic == "Bitalino: NewSampling"){
+                choice = 2;
+                startSampling = false; 
+            }else if(topic == "Bitalino: FinishSampling"){
+                choice = 2;
+                endSampling = true;
+            }else if(topic == "Bitalino: StartSampling"){
+                startSampling = true;
+            }else if(topic == "Bitalino: SaveSampling"){
+                saveFileName = content;
+            }else if(topic == "Bitalino: DeleteSampling"){
+                saveFileName = "";
             }
-            catch (Bitalino.Exception e)
-            {
-                Console.WriteLine("BITalino exception: {0}", e.Message);
-            }
-            catch (ArgumentException e)
-            {
-                Console.WriteLine("BITalino exception: {0}", e.Message);
-            }
+            messageReceived = true;
+        }
+
+        private static void OnAuthorized(bool authorized)
+        {
+            Console.WriteLine("Authorized!!!");
+
+            mc.SubscribeTo("Bitalino: StartSampling");
+            mc.SubscribeTo("Bitalino: StopSampling");
+            mc.SubscribeTo("Bitalino: RestartSampling");
+            mc.SubscribeTo("Bitalino: NewSampling");
+            mc.SubscribeTo("Bitalino: FinishSampling");
+            mc.SubscribeTo("Bitalino: StateUpdateRequest");
+            mc.SubscribeTo("Bitalino: StateUpdateAnswer");
+            mc.SubscribeTo("Bitalino: SaveSampling");
+            mc.SubscribeTo("Bitalino: DeleteSampling");
+        }
+
+
+        static void UnhandledExceptionTrapper(object sender, UnhandledExceptionEventArgs e)
+        {
+            Console.WriteLine(e.ExceptionObject.ToString());
+            mre.WaitOne();
         }
 
         private static VCSampler VCSamplerInit(VCBitalino bitalino, Bitalino dev, VCData bitalinoData)

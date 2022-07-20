@@ -53,7 +53,7 @@ namespace VCockpit.BitalinoLibrary.util
         {
             t.Join();
             // t_validator.Join();
-        } 
+        }
 
         private void sampling_background()
         {
@@ -116,8 +116,8 @@ namespace VCockpit.BitalinoLibrary.util
             long milliseconds = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             return milliseconds;
         }
-        
-        public void SaveResults()
+
+        public void SaveResults(String nameFile)
         {
             List<double> sample_resp = bitalino.GetRespSamples(bitalinoData);
             List<double> sample_ecg = bitalino.GetEcgSamples(bitalinoData);
@@ -126,13 +126,13 @@ namespace VCockpit.BitalinoLibrary.util
             List<int> sample_sequences = bitalino.GetSequencesSamples(bitalinoData);
 
             Console.WriteLine("Exporting Results ...");
-            SaveOnFile("sampling_pzt_" + bitalinoData.timestamp + "_" + bitalinoData.samplingRate + ".csv", sample_resp);
-            SaveOnFile("sampling_ecg_" + bitalinoData.timestamp + "_" + bitalinoData.samplingRate + ".csv", sample_ecg);
-            SaveOnFile("sampling_eda_" + bitalinoData.timestamp + "_" + bitalinoData.samplingRate + ".csv", sample_eda);
-            SaveOnFile("sampling_ppg_" + bitalinoData.timestamp + "_" + bitalinoData.samplingRate + ".csv", sample_ppg);
+            SaveOnFile("sampling_pzt_" + bitalinoData.timestamp + "_" + bitalinoData.samplingRate +"_"+ nameFile +".csv", sample_resp);
+            SaveOnFile("sampling_ecg_" + bitalinoData.timestamp + "_" + bitalinoData.samplingRate +"_"+ nameFile +".csv", sample_ecg);
+            SaveOnFile("sampling_eda_" + bitalinoData.timestamp + "_" + bitalinoData.samplingRate +"_"+ nameFile +".csv", sample_eda);
+            SaveOnFile("sampling_ppg_" + bitalinoData.timestamp + "_" + bitalinoData.samplingRate +"_"+ nameFile +".csv", sample_ppg);
 
             // it will be used analytics service to perform data quality analysis and timestamp inferring
-            SaveOnFileInt("sampling_sequences_" + bitalinoData.timestamp + "_" + bitalinoData.samplingRate + ".csv", sample_sequences);
+            SaveOnFileInt("sampling_sequences_" + bitalinoData.timestamp + "_" + bitalinoData.samplingRate + "_" + nameFile +".csv", sample_sequences);
         }
 
         private void SaveOnFile(string filename, List<double> samples)
@@ -159,5 +159,14 @@ namespace VCockpit.BitalinoLibrary.util
             tw.Close();
         }
 
+        //Clear Buffer to delete Buffered Data
+        public void ClearSamples()
+        {
+            bitalino.GetRespSamples(bitalinoData);
+            bitalino.GetEcgSamples(bitalinoData);
+            bitalino.GetEdaSamples(bitalinoData);
+            bitalino.GetPpgSamples(bitalinoData);
+            bitalino.GetSequencesSamples(bitalinoData);
+        }
     }
 }

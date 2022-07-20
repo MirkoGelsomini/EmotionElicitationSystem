@@ -83,7 +83,12 @@
           </a></li>
       </ul>
     </div>
-    <div class="navbar-container d-flex content" style="height: 50px;"></div>
+    <div class="navbar-container d-flex content" style="height: 50px;">
+      <div class="form-check form-check-danger d-flex align-items-center justify-content-center" id="bitalino-ready">
+        <input type="radio" class="form-check-input" style="transform:scale(0.5);" checked="">
+        <label id="label-bitalino-ready">Bitalino Non Pronto</label>
+      </div>
+    </div>
   </nav>
   <!-- END: Header-->
 
@@ -170,34 +175,34 @@
           data-bs-backdrop="static" data-bs-keyboard="false">
           <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class=" modal-content" id="question-modal">
-            <div class="row">
-              <div class="col-12" id="questions-radio">
-                
+              <div class="row">
+                <div class="col-12" id="questions-radio">
+
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="modal fade" id="Thanks" tabindex="-1" aria-labelledby="QuestionsLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-body">
-              <div class="text-center">
-                Grazie per il tempo dedicato premere salva
-                <br />
-                per salvare le statistiche delle risposte
+        <div class="modal fade" id="Thanks" tabindex="-1" aria-labelledby="QuestionsLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="text-center">
+                  Grazie per il tempo dedicato premere salva
+                  <br />
+                  per salvare le statistiche delle risposte
+                </div>
               </div>
-            </div>
-            <div class="row m-25">
-              <button type="button" class="btn btn-primary" id="save-button">
-                Salva
-              </button>
+              <div class="row m-25">
+                <button type="button" class="btn btn-primary" id="save-button">
+                  Salva
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <!-- BEGIN: Vendor JS-->
@@ -214,6 +219,8 @@
   <!-- END: Theme JS-->
 
   <!-- BEGIN: Player JS-->
+  <script src="../../app-assets/js/applicationJs/sockets.js"></script>
+  <script src="../../app-assets/js/applicationJs/script.js"></script>
   <script src="../../app-assets/js/applicationJs/player.js"></script>
   <script src="../../app-assets/js/applicationJs/question.js"></script>
   <!-- END: Player JS-->
