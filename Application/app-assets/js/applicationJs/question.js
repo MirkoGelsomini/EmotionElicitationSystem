@@ -5,6 +5,7 @@ var currentScene;
 var passedScene;
 var messageCodeExpected = 0;
 var firstPlaylistVideo = true;
+let wss;
 
 const sessionIdentifier = uuidv4();
 
@@ -264,7 +265,7 @@ function uuidv4() {
 }
 
 function waitForWsmCreation(){
-    if(typeof window.wsm !== "undefined"){
+    if(typeof wss !== "undefined"){
         wsm.Publish("Bitalino: StateUpdateRequest", "Requesting state");
         wsm.Publish("Bitalino: NewSampling", "New Video");
         return;

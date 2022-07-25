@@ -141,7 +141,7 @@ function addCard(jsonObject, numberOfCard) {
     if(!chosenScenes.includes(jsonObject)){
         cardsHtml.push("<button class=\"btn btn-primary scenesBtn addBtn\" id=\"add-" + numberOfCard + "-button\" onClick=\"addScene(this.id)\"></button>");
     }else{
-        cardsHtml.push("<button class=\"btn btn-danger scenesBtn removeBtn\" id=\"add-" + numberOfCard + "-button\" onClick=\"addScene(this.id)\"></button>");
+        cardsHtml.push("<button class=\"btn btn-danger scenesBtn removeScene\" id=\"add-" + numberOfCard + "-button\" onClick=\"addScene(this.id)\"></button>");
     }
     cardsHtml.push("</div></div>");
     cardsHtml.push("<div class=\"img_wrapper\" style=\"position:relative; padding-bottom:56.25%;\">")
@@ -374,7 +374,7 @@ clearPlaylistButton.onclick = ()=>{
     $(".scenesBtn").each(function() {
         $(this).addClass("addBtn");
         $(this).addClass("btn-primary");
-        $(this).removeClass("removeBtn");
+        $(this).removeClass("removeScene");
         $(this).removeClass("btn-danger");
       });
     refreshPlayList();
