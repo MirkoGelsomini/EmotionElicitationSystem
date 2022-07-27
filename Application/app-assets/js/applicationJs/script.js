@@ -1,10 +1,11 @@
 var bitalinoReady = false;
 var start = function (){
     window.wsm = InitializeWebSocket("ws://127.0.0.1:50000/VCOCKPIT", onAuthorized, onMessage, onClose);		
+    
     function onAuthorized(){
         console.log("VCopkit Ready");
-        wss = window.wsm
         subscribeToAllTopics();
+        wss = window.wsm
     }
 
     function subscribeToAllTopics(){

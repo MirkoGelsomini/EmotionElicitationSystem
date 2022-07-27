@@ -195,6 +195,7 @@ function shuffle(arrayToShuffle) {
 function createRandomizedQuestion() {
     var questions = [];
     var randomizedEmotions = shuffle(emotions);
+    questions.push("<div class=\"row space d-flex justify-content-center text-center font-medium-3\">Con quale intensità hai provato le seguenti emozioni?</div>");
     randomizedEmotions.forEach((e)=>{
         let questionDiv = [];
         questionDiv.push("<div class=\"row space\">");
@@ -202,31 +203,31 @@ function createRandomizedQuestion() {
         let translation = "";
         switch(e){
             case "Amusement":
-                translation = "Quanta felicità ";
+                translation = "Felicità";
                 break;
             case "Anger":
-                translation = "Quanta rabbia ";
+                translation = "Rabbia";
                 break;
             case "Sadness":
-                translation = "Quanta tristezza ";
+                translation = "Tristezza";
                 break;
             case "Tenderness":
-                translation = "Quanta tenerezza ";
+                translation = "Tenerezza";
                 break;
             case "Fear":
-                translation = "Quanta paura ";
+                translation = "Paura";
                 break;
             case "Disgust":
-                translation = "Quanto disgusto ";
+                translation = "Disgusto";
                 break;
             case "Neutrality":
-                translation = "Quanta neutralità ";
+                translation = "Neutralità";
                 break;
             default:
                 console.log("switch case error");
                 break;
         }
-        questionDiv.push("<span id=\""+e+"-validation\">"+translation+"hai provato?</span></div>");
+        questionDiv.push("<span id=\""+e+"-validation\">"+translation+"</span></div>");
         questionDiv.push("<div class=\"col-xl-8 col-md-8 col-8 d-flex justify-content-center  font-medium-2\">");
         questionDiv.push("<section id=\"basic-radio\">");
         

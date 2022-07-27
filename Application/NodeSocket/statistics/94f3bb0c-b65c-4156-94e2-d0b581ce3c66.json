@@ -1,0 +1,37 @@
+[
+	{
+		"sessionID": "94f3bb0c-b65c-4156-94e2-d0b581ce3c66"
+	},
+	{
+		"Scene": {
+			"id": "3-Suicidio",
+			"movie title": "L'attimo fuggente",
+			"emotions": "Tristezza",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=3.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=3.jpg"
+		},
+		"Neutrality": "3",
+		"Amusement": "3",
+		"Tenderness": "3",
+		"Disgust": "3",
+		"Fear": "3",
+		"Sadness": "3",
+		"Anger": "3"
+	},
+	{
+		"Scene": {
+			"id": "10-Morte Infante",
+			"movie title": "Trainspotting",
+			"emotions": "Disgusto",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=10.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=10.jpg"
+		},
+		"Neutrality": "3",
+		"Anger": "2",
+		"Tenderness": "4",
+		"Disgust": "3",
+		"Fear": "2",
+		"Sadness": "3",
+		"Amusement": "2"
+	}
+]
