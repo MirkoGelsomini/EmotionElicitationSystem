@@ -65,6 +65,10 @@ namespace VC.BitalinoLibrary
                 // one for each device
                 VCSampler sampler_dev = VCSamplerInit(bitalino, dev, bitalinoData);
                 
+                /***
+                * Changed the non stop condition with a boolen which is set to false
+                * when a finish sampling messsage is received.
+                **/
                 while(!endSampling){
                     if(startSampling){
                         Sampling(bitalino,bitalinoData,sampler_dev,dev);

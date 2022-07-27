@@ -1,0 +1,30 @@
+Bitalino code modifications
+
+--Bitalino/BitalinoVcockpit/ConsoleApp1/util/VCSampler.cs--
+
+1) Modified method "SaveResults()", added the file's name as an input paramether. The name will be in the format "SessionsId_SceneId". (line 122)
+
+2) Added method "ClearSamples()", needed to clear the current samplaning with the supposition that the memory is an spi flash and for clear the buffer is enough to read it (line 165)
+
+--Bitalino/BitalinoVcockpit/ConsoleApp1/MessageController.cs--
+
+Added the code file for websocket connection controller provided by Mirko Gelsomini
+
+--Bitalino/BitalinoVcockpit/ConsoleApp1/Program.cs--
+
+1) Added some starting Message client Variables (line 13)
+
+2) Added the "Init()" method used to initialize the webSocket communication with the messageBroker (line 25)
+3) Changed the non stop condition with a boolean which is set to false when a finish sampling message is received. (line 72)
+
+
+4) Inside the non stop while loop when a message of start sampling is received the bitalino will start sampling else the Thread will just sleep for 50ms (line 73)
+
+5) Added "Sampling()" method which is only the body of the old while loop inside at this method, so that it can be recall.(line 96)
+
+6) Added "OnMessage()" method, it is called when a new message from the Message Brocker is received, depending on the topic, the switch's choice of the "Sampling()" method is
+   changed, the topics are the same discussed during the teams call with Simone Sguazza and Mirko Gelsomini (the list of the topics can be found in the topics.txt insiede the
+   EmotionElicitationSystem git folder). The decision about deleting or saving the sampling is made by the content of the message with the topics of delete and save, if the content
+   is empty the sampling will be deleted else it will be saved. (line 185)
+
+7) Added "OnAuthorized()" method, when the connection with the message broker is authorized, the bitalino client will subscribe to all the necessary topics. (line 214)

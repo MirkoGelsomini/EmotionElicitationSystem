@@ -1,0 +1,26 @@
+Topics:
+    Bitalino: StartSampling
+        -> Dopo aver fatto il primo set up il bitalino è in idle (si può far partire il sampling, poi metterlo in pause (idle) e poi pulire via i sampling per una partenza pulita)
+    Bitalino: StopSampling
+        -> Qui mettiamo in pausa il sampling
+    Bitalino: RestartSampling
+        -> Qui facciamo ripartire il sampling (nel caso di una pausa), ma sempre dentro lo stesso video
+    Bitalino: NewSampling
+        -> Qui iniziamo un nuovo video
+        -> Cancelliamo i sampling vecchi e facciamo ripartire il sampling
+    Bitalino: FinishSampling
+        -> Qui chiudiamo l'applicativo
+        -> da fare dopo che usciamo dall'applicativo
+    Bitalino: StateUpdateRequest
+        -> il client (unity, emotion elitication system), chiede update
+    Bitalino: StateUpdateAnswer
+        -> il client bitalino riceve la richieste
+            in una prima versione risponde sempre ON
+        -> nelle versioni successive ci sarà il thread
+            di validazione che ha lo stato del sistema
+            (sensori attaccati, all ok, ...)
+    Bitalino: SaveSampling
+        -> il client bitalino riceve il nome del file da salvare e salva 
+            i sampling
+    Bitalino: DeleteSampling
+        -> Qui riceviamo la richiesta di eliminare i Sampling

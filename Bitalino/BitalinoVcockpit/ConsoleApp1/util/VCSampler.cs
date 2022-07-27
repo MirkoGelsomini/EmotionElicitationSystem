@@ -117,6 +117,8 @@ namespace VCockpit.BitalinoLibrary.util
             return milliseconds;
         }
 
+
+        /*Added the nameFile as a parameter (the name will be sessionId_scenesId)*/
         public void SaveResults(String nameFile)
         {
             List<double> sample_resp = bitalino.GetRespSamples(bitalinoData);
