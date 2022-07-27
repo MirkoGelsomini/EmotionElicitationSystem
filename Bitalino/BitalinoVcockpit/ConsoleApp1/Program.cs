@@ -89,6 +89,10 @@ namespace VC.BitalinoLibrary
             }
         }
 
+        /*
+        * Added "Sampling()" method which is only the body of the old while loop inside at this method, 
+        * so that it can be recall
+        **/
         static void Sampling(VCBitalino bitalino,VCData bitalinoData ,VCSampler sampler_dev, Bitalino dev){
                 bitalino.StartDeviceSampling(dev, bitalinoData.samplingRate);
                 // start the thread
@@ -116,7 +120,7 @@ namespace VC.BitalinoLibrary
                             //int choice = int.Parse(userInput);
                             
                             long timestampAction = VCSampler.GetTimestampMilliseconds();
-                            string log = timestampAction.ToString();
+                            string log = timestampActison.ToString();
                             switch (choice)
                             {
                                 case 0:
