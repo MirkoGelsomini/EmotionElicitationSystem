@@ -5,19 +5,5 @@
 		"emotions": "Tristezza",
 		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=3.mp4",
 		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=3.jpg"
-	},
-	{
-		"id": "5-Furto Auto",
-		"movie title": "American History X",
-		"emotions": "Rabbia",
-		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=5.mp4",
-		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=5.jpg"
-	},
-	{
-		"id": "10-Morte Infante",
-		"movie title": "Trainspotting",
-		"emotions": "Disgusto",
-		"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=10.mp4",
-		"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=10.jpg"
 	}
 ]

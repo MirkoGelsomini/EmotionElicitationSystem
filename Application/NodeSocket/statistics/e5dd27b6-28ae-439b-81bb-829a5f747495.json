@@ -1,0 +1,21 @@
+[
+	{
+		"sessionID": "e5dd27b6-28ae-439b-81bb-829a5f747495"
+	},
+	{
+		"Scene": {
+			"id": "3-Suicidio",
+			"movie title": "L'attimo fuggente",
+			"emotions": "Tristezza",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=3.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=3.jpg"
+		},
+		"Fear": "1",
+		"Neutrality": "1",
+		"Amusement": "1",
+		"Anger": "1",
+		"Tenderness": "1",
+		"Sadness": "1",
+		"Disgust": "1"
+	}
+]
