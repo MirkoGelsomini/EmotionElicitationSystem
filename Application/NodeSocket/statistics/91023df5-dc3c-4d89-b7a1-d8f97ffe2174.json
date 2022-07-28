@@ -1,0 +1,21 @@
+[
+	{
+		"sessionID": "91023df5-dc3c-4d89-b7a1-d8f97ffe2174"
+	},
+	{
+		"Scene": {
+			"id": "1-Postino",
+			"movie title": "I visitatori",
+			"emotions": "Divertimento",
+			"URL": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2Ffilm&files=1.mp4",
+			"URLimage": "https://drive.switch.ch/index.php/s/lkC770ydPEiHgpv/download?path=%2FImage&files=1.jpg"
+		},
+		"Sadness": "1",
+		"Anger": "2",
+		"Neutrality": "2",
+		"Disgust": "1",
+		"Tenderness": "2",
+		"Fear": "1",
+		"Amusement": "2"
+	}
+]
