@@ -57,6 +57,8 @@ The bitalino status is showed on the top left corner of the page with a red(offl
 
  When bitalino answers with an "OK" status, the scene can be played.
 
+ **Sometimes at the first load, the page needs to be refreshed in order to connect to the MessageBroker (Bug)**
+
 
 ![Player_Bitalino_Ready](./Screenshot/Player_Bitalino_Ready.png)
 

@@ -1,7 +1,7 @@
 var bitalinoReady = false;
 var start = function (){
-    window.wsm = InitializeWebSocket("ws://127.0.0.1:50000/VCOCKPIT", onAuthorized, onMessage, onClose);		
-    
+    window.wsm = InitializeWebSocket("ws://127.0.0.1:50000/VCOCKPIT", onAuthorized, onMessage, onClose);
+
     function onAuthorized(){
         console.log("VCopkit Ready");
         subscribeToAllTopics();
@@ -27,14 +27,18 @@ var start = function (){
                 document.getElementById("bitalino-ready").classList.remove("form-check-danger");
                 document.getElementById("bitalino-ready").classList.add("form-check-success");
                 document.getElementById("label-bitalino-ready").innerHTML = "Bitalino pronto";
+                if(firstPlaylistVideo){
+                  wsm.Publish("Bitalino: NewSampling", "New Video");
+                  firstPlaylistVideo = false;
+                }
             }
         }
     }
-    
+
     function onClose(){
         console.log('.. connection closed');
     }
-    
+
 }
 
 function Message() {
@@ -42,4 +46,3 @@ function Message() {
     var topic = null;
     var content = null;
 }
-

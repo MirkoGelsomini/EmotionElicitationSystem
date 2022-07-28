@@ -7,7 +7,6 @@ Topics:
         -> Qui facciamo ripartire il sampling (nel caso di una pausa), ma sempre dentro lo stesso video
     Bitalino: NewSampling
         -> Qui iniziamo un nuovo video
-        -> Cancelliamo i sampling vecchi e facciamo ripartire il sampling
     Bitalino: FinishSampling
         -> Qui chiudiamo l'applicativo
         -> da fare dopo che usciamo dall'applicativo

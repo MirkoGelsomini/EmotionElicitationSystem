@@ -28,3 +28,7 @@ Added the code file for websocket connection controller provided by Mirko Gelsom
    is empty the sampling will be deleted else it will be saved. (line 185)
 
 7) Added "OnAuthorized()" method, when the connection with the message broker is authorized, the bitalino client will subscribe to all the necessary topics. (line 214)
+
+
+TODO
+#add a message queue to manage possible multi message

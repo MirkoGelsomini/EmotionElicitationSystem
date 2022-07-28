@@ -48,8 +48,8 @@ ws.addEventListener("message", (data) => {
 })
 
 /**
- * Send a message to the websocket 
- * to save the passend result json if 
+ * Send a message to the websocket
+ * to save the passend result json if
  * at least 1 scene has been aswered
  */
 function save() {
@@ -99,7 +99,7 @@ function nextTrack() {
     document.getElementById("bitalino-ready").classList.remove("form-check-success");
     document.getElementById("label-bitalino-ready").innerHTML = "Bitalino non pronto";
     waitForWsmCreation();
-    
+
 
     currentScene = playlist.shift();
     if (typeof currentScene !== "undefined" && currentScene.URL) {
@@ -125,11 +125,11 @@ function thanks() {
 }
 
 /**
- * Check if the question of given emotion 
+ * Check if the question of given emotion
  * is answered, if not the question color change
  * to red.
- * @param {emotion to check} emotion 
- * @returns 
+ * @param {emotion to check} emotion
+ * @returns
  */
 function validateAnswer(emotion) {
     let answer = $('#' +  emotion + ' input:radio:checked').val();
@@ -230,7 +230,7 @@ function createRandomizedQuestion() {
         questionDiv.push("<span id=\""+e+"-validation\">"+translation+"</span></div>");
         questionDiv.push("<div class=\"col-xl-8 col-md-8 col-8 d-flex justify-content-center  font-medium-2\">");
         questionDiv.push("<section id=\"basic-radio\">");
-        
+
         questionDiv.push("<div id=\""+e+"\">");
         for(let i=1;i<=5;i++){
             if(i===1){
@@ -246,12 +246,12 @@ function createRandomizedQuestion() {
         questionDiv.push("</div></section></div></div><hr/>");
         questions.push(questionDiv.join(""));
     })
-    questions.push("<div class=\"row space m-25\"><button type=\"button\" class=\"btn btn-primary\"id=\"confirm-button\">Conferma</button></div>");    
+    questions.push("<div class=\"row space m-25\"><button type=\"button\" class=\"btn btn-primary\"id=\"confirm-button\">Conferma</button></div>");
     questionRadios.innerHTML = questions.join("");
     let confirmBtn = document.getElementById('confirm-button');
     confirmBtn.onclick = function () {
         confirm();
-    }    
+    }
     document.querySelectorAll('.first').forEach((e)=>e.insertAdjacentHTML('beforeBegin', "Poco "));
     document.querySelectorAll('.last').forEach((e)=>e.insertAdjacentHTML('afterEnd', "Molto"));
 }
@@ -268,7 +268,6 @@ function uuidv4() {
 function waitForWsmCreation(){
     if(typeof wss !== "undefined"){
         wsm.Publish("Bitalino: StateUpdateRequest", "Requesting state");
-        wsm.Publish("Bitalino: NewSampling", "New Video");
         return;
     }
     else{
